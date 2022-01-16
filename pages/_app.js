@@ -77,7 +77,7 @@ const App = (props) => {
             <Header theme={theme} handleTheme={handleTheme} />
             <Component {...pageProps} />
             {!excludeFooter.includes(router.pathname) && <Footer />}
-            {!cookieConsent && <CookieConsent acceptCookie={acceptCookie} />}
+            {/*!cookieConsent && <CookieConsent acceptCookie={acceptCookie} />*/}
           </div>
         </PersistGate>
       </Provider>

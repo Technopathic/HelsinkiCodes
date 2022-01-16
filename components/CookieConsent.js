@@ -34,7 +34,9 @@ const CookieInfo = styled.div`
     }
 `
 
-const CookieButton = styled.div``
+const CookieButton = styled.div`
+    cursor-pointer;
+`
 
 const CookieConsent = (props) => (
     <Container>
