@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "inter-regular";
+    src: url(/fonts/Inter-Regular.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'inter-bold';
+    src: url(/fonts/Inter-Bold.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'gothic-regular';
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    src: url(/fonts/Gothic-Regular.otf) format('opentype');
+}
+
+@font-face {
+    font-family: "hack-regular";
+    src: url(/fonts/hack-regular.woff2) format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+html, body { 
+    margin:0; 
+    padding:0;
+    text-rendering: optimizelegibility;
+    font-family: "inter-regular",source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace;
+    overflow-x: hidden;
+    transition: all 200ms linear;
+}
+
+.no-scroll-bar::-webkit-scrollbar {
+    display: none;
+}
+
+h1 {
+    color: #31475e;
+    font-size:3.5rem;
+    font-family:"gothic-regular";
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+h2 {
+    color: #31475e;
+    font-size:2.5rem;
+    margin-top:2rem;
+    font-family:"gothic-regular";
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h3 {
+    color: #31475e;
+    font-size:2rem;
+    margin-top:2rem;
+    font-family:"gothic-regular";
+    text-transform: uppercase;
+}
+
+h4 {
+    color: #31475e;
+    font-size:1.5rem;
+    font-family:"gothic-regular";
+    text-transform: uppercase;
+}
+
+p {
+    font-size:18px;
+    line-height:1.75;
+    margin:8px 0px;
+    color: #31475e;
+}
+
+ul {
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+li {
+    font-size:18px;
+    line-height:1.5;
+}
+
+a {
+    font-size:18px;
+    line-height:1.5;
+    color: #FF6665;
+    text-decoration:underline;
+}
+
+pre {
+    background: #333333;
+    overflow-x:auto;
+    margin:0 !important;
+    color: #FF6665;
+    padding: 16px;
+    border-radius: 0.5rem;
+}
+
+code {
+    font-size: 18px;
+    line-height: 130%;
+}
+
+img {
+    margin:0 auto;
+}
+
+table {
+    margin: 32px 0;
+}
+
+th {
+    text-align: left;
+    background-color: #f2f2f2;
+    padding:8px;
+}
+
+td {
+    padding: 8px;
+}
+
+tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+.text-red-brand {
+    color: #FF6665;
+}
+
+.text-blue-brand {
+    color: #31475e;
+}
+
+.border-blue-brand {
+    border-color: #31475e;
+}
+
+.text-font-gothic {
+    font-family:"gothic-regular";
+    letter-spacing: 1px;
+}
