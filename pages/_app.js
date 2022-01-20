@@ -18,7 +18,6 @@ const store = configureStore()
 const persistor = persistStore(store)
 
 const App = (props) => {
-  const [theme, setTheme] = useState('light')
   const [cookieConsent, setCookieConsent] = useState(false);
 
   const router = useRouter()
@@ -28,30 +27,8 @@ const App = (props) => {
   usePanelbear('ENQ1HaV0pgl');
 
   useEffect(() => {
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      setTheme('dark')
-      document.documentElement.classList.add('dark')
-      document.body.classList.add("bg-bodyDark")
-    } else {
-      setTheme('light')
-      document.documentElement.classList.remove('dark')
-      document.body.classList.remove("bg-bodyDark")
-    }
-
     setCookieConsent(localStorage.getItem('cookieConsent'))
   }, [])
-
-  const handleTheme = (item) => {
-    localStorage.theme = item
-    setTheme(item)
-    if (item === 'dark') {
-      document.documentElement.classList.add('dark')
-      document.body.classList.add("bg-bodyDark")
-    } else {
-      document.documentElement.classList.remove('dark')
-      document.body.classList.remove("bg-bodyDark")
-    }
-  }
 
   const acceptCookie = () => {
     localStorage.setItem('cookieConsent', true);
@@ -73,8 +50,8 @@ const App = (props) => {
       </Head>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <div className="flex flex-col justify-between min-h-screen text-gray-700 dark:text-gray-50">
-            <Header theme={theme} handleTheme={handleTheme} />
+          <div className="flex flex-col justify-between min-h-screen text-gray-700">
+            <Header />
             <Component {...pageProps} />
             {!excludeFooter.includes(router.pathname) && <Footer />}
             {/*!cookieConsent && <CookieConsent acceptCookie={acceptCookie} />*/}

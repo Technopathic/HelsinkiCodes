@@ -34,12 +34,6 @@ module.exports = {
       'hcGrayBrand': '-8px 8px 0px 0px #333333',
       'hcBlueBrand': '-8px 8px 0px 0px #31475e'
     }),
-    backgroundImage: theme => ({
-      'bodyLight': 'repeating-linear-gradient(-55deg, rgba(238, 238, 238, 0.24), rgba(238, 238, 238, 0.24) 200px, rgba(255, 255, 255, 1) 200px, rgba(255, 255, 255, 1) 400px)',
-      'bodyDark': 'repeating-linear-gradient(-55deg, rgba(23, 26, 35, 0.99), rgba(23, 26, 35, 0.99) 200px, rgba(23, 26, 35, 1) 200px, rgba(23, 26, 35, 1) 400px)',
-      'cvDividerLight': 'repeating-linear-gradient(-55deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 20px, rgba(0, 0, 0, 1) 20px, rgba(0, 0, 0, 1) 40px)',
-      'cvDividerDark': 'repeating-linear-gradient(-55deg, rgba(238, 238, 238, 0), rgba(238, 238, 238, 0) 20px, rgba(255, 255, 255, 1) 20px, rgba(255, 255, 255, 1) 40px)'
-    }),
     extend: {},
   },
   variants: {

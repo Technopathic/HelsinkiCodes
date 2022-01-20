@@ -109,9 +109,9 @@ const Footer = () => {
             <section className="w-full max-w-screen-xl m-auto flex lg:flex-row flex-col flex-grow justify-between pt-12 p-8">
                 <section className="flex flex-col">
                     <span className="text-gray-200">
-                        <img src="/site-images/hcLogoRed-128.png" className="h-20 w-20 mb-8" />
+                        <img src="/site-images/hcSVG.svg" className="h-20 w-20 mb-8" />
                     </span>
-                    <div className="flex text-gray-400 items-center flex-wrap dark:text-gray-100">Made with&nbsp;<span className="text-red-brand">❤</span>&nbsp;in Helsinki</div>
+                    <div className="flex text-gray-400 items-center flex-wrap">Made with&nbsp;<span className="text-red-brand">❤</span>&nbsp;in Helsinki</div>
                     <span className="text-gray-500">#hlsnk</span>
                 </section>
                 <section className="grid md:grid-cols-3 gap-8 grid-cols-2 lg:mt-0 mt-8">
