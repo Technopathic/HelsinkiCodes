@@ -57,8 +57,8 @@ const Post = ({ children, meta }) => {
         <meta name="og:title" property="og:title" content={`${meta.title} :: ${process.env.APP_SITE_NAME}`} />
         <meta name="og:description" property="og:description" content={meta.description} />
 
-        <meta name="og:image" property="og:image" content={`${process.env.APP_URL}/${meta.coverImage}`} />
-        <meta name="og:image:secure_url" property="og:image:secure_url" content={`${process.env.APP_URL}/${meta.coverImage}`} />
+        <meta name="og:image" property="og:image" content={`${process.env.APP_URL + meta.coverImage}`} />
+        <meta name="og:image:secure_url" property="og:image:secure_url" content={`${process.env.APP_URL + meta.coverImage}`} />
 
       </Head>
       <Toast showToast={showToast} setShowToast={setShowToast} />
