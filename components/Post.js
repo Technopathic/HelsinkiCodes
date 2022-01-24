@@ -77,9 +77,13 @@ const Post = ({ children, meta }) => {
                   </div>
                   <h1 className="m-0 ml-4 p-0 uppercase text-blue-brand text-4xl sm:text-6xl">{meta.title}</h1>
                 </div>
-                <div className="flex flex-col mt-8 sm:mt-4">
-                  <section className="m-0 p-0 uppercase text-gray-500 text-base flex">
-                    <div className="flex flex-col sm:flex-row">
+                <div className="flex flex-col mt-4">
+                  <section className="m-0 p-0 uppercase text-gray-500 text-base flex flex-col sm:flex-row">
+                    <div className="flex">
+                      <div className="flex sm:hidden">
+                        <CgFormatSlash size={28} className="text-red-brand" style={{ marginTop: "-2px" }} />
+                        <CgFormatSlash size={28} className="-ml-5 text-red-brand" style={{ marginTop: "-2px" }} />
+                      </div>
                       <span className="text-gray-500">
                         Posted by&nbsp;
                       </span>
@@ -87,11 +91,15 @@ const Post = ({ children, meta }) => {
                         {meta.authors[0].name}
                       </span>
                     </div>
-                    <div className="flex">
+                    <div className="hidden sm:flex">
                       <CgFormatSlash size={28} className="text-red-brand" style={{ marginTop: "-2px" }} />
                       <CgFormatSlash size={28} className="-ml-5 text-red-brand" style={{ marginTop: "-2px" }} />
                     </div>
-                    <div className="flex flex-col sm:flex-row">
+                    <div className="flex">
+                      <div className="flex sm:hidden">
+                        <CgFormatSlash size={28} className="text-red-brand" style={{ marginTop: "-2px" }} />
+                        <CgFormatSlash size={28} className="-ml-5 text-red-brand" style={{ marginTop: "-2px" }} />
+                      </div>
                       <span className="text-gray-500">
                         Read time &nbsp;
                       </span>
@@ -99,11 +107,15 @@ const Post = ({ children, meta }) => {
                         {readingTime()} min
                       </span>
                     </div>
-                    <div className="flex">
+                    <div className="hidden sm:flex">
                       <CgFormatSlash size={28} className="text-red-brand" style={{ marginTop: "-2px" }} />
                       <CgFormatSlash size={28} className="-ml-5 text-red-brand" style={{ marginTop: "-2px" }} />
                     </div>
-                    <div className="flex flex-col sm:flex-row">
+                    <div className="flex">
+                      <div className="flex sm:hidden">
+                        <CgFormatSlash size={28} className="text-red-brand" style={{ marginTop: "-2px" }} />
+                        <CgFormatSlash size={28} className="-ml-5 text-red-brand" style={{ marginTop: "-2px" }} />
+                      </div>
                       <span className="text-gray-500">
                         On&nbsp;
                       </span>
@@ -116,7 +128,7 @@ const Post = ({ children, meta }) => {
               </div>
             </section>
           </section>
-          <div className="grid grid-cols-1 lg:grid-cols-4 w-full max-w-screen-xl mx-auto my-8 gap-y-8 lg:gap-x-8">
+          <div className={`grid grid-cols-1 lg:grid-cols-4 w-full max-w-screen-xl mx-auto my-4 lg:gap-x-8 ${meta.demo === "" && meta.source === "" && meta.summary === "" ? null :'gap-y-8'}`}>
             <div className="flex flex-col col-span-1 gap-8">
               {meta.demo === "" && meta.source === "" && meta.summary === "" ? null :
               <div className="bg-hcGrayBrand grid grid-cols-3 gap-6 py-4 px-6 rounded-xl">

@@ -121,6 +121,9 @@ const Header = (props) => {
                         </Link>
                     </section>
                     <section className="flex items-center flex-col md:flex-row md:flex-grow-0 flex-grow">
+                        <div onClick={() => setHeaderMobile(!showHeaderMobile)} className="text-gray-100 bg-darkGrayBrand hover:opacity-70 transition-all w-16 h-16 rounded-lg shadow-olg flex justify-center items-center mb-4 self-end md:hidden">
+                            <FiX size={38} />
+                        </div>
                         <div onClick={() => showSearchOverlay(!searchOverlay)} className="text-gray-600 bg-whiteBrand hover:opacity-70 transition-all w-16 h-16 rounded-lg shadow-olg flex justify-center items-center ml-0 mb-4 md:mb-0 md:ml-2 cursor-pointer">
                             <FiSearch size={38} />
                         </div>
@@ -150,9 +153,6 @@ const Header = (props) => {
                             </div>
                         </a>
                     </section>
-                    <div onClick={() => setHeaderMobile(!showHeaderMobile)} className="text-gray-600 bg-whiteBrand hover:opacity-70 transition-all w-16 h-16 rounded-lg shadow-olg flex justify-center items-center self-end md:hidden">
-                        <FiX size={38} />
-                    </div>
                 </section>
             </HeaderWrapper>
             <Dialog show={showDialog} setDialog={setShowDialog}>
