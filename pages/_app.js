@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Head from 'next/head'
 import { usePanelbear } from '@panelbear/panelbear-nextjs';
 import { useRouter } from 'next/router'
 import { Provider } from 'react-redux'
@@ -36,16 +37,28 @@ const App = (props) => {
 
   const { Component, pageProps } = props
   return (
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <div className="flex flex-col justify-between min-h-screen text-gray-700">
-          {!excludeFooter.includes(router.pathname) && <Header />}
-          <Component {...pageProps} />
-          {!excludeFooter.includes(router.pathname) && <Footer />}
-          {/*!cookieConsent && <CookieConsent acceptCookie={acceptCookie} />*/}
-        </div>
-      </PersistGate>
-    </Provider>
+    <>
+      <Head>
+        <meta charSet="utf-8" />
+        <meta content="ie=edge" httpEquiv="x-ua-compatible" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+        <meta name="og:image" property="og:image" content={process.env.APP_IMAGE} />
+        <meta name="og:image:secure_url" property="og:image:secure_url" content={process.env.APP_IMAGE} />
+
+        <title>{process.env.APP_TITLE}</title>
+      </Head>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <div className="flex flex-col justify-between min-h-screen text-gray-700">
+            {!excludeHeader.includes(router.pathname) && <Header />}
+            <Component {...pageProps} />
+            {!excludeFooter.includes(router.pathname) && <Footer />}
+            {/*!cookieConsent && <CookieConsent acceptCookie={acceptCookie} />*/}
+          </div>
+        </PersistGate>
+      </Provider>
+    </>
   )
 }
 
