@@ -18,7 +18,7 @@ const HeaderWrapper = styled.header`
     backdrop-filter: ${(props) => props.scrollPos === 0 ? 'blur(0px);' : 'blur(5px);'};
     background-color: ${(props) => props.scrollPos === 0 ? 'transparent' : 'rgba(255, 255, 255, 0.4)'};
 
-    @media(max-width: 425px) {
+    @media(max-width: 767px) {
         transform: ${(props) => !props.showMobile ? "translate3d(-100px, 0px, 0px)" : "translate3d(0px, 0px, 0px)"};
         backdrop-filter: blur(5px);
         background-color: rgba(255, 255, 255, 0.4);

@@ -44,7 +44,7 @@ export const LargePreview = ({ post, link }) => (
             <div className="absolute w-full h-full bg-blackBrand bg-opacity-30 rounded-xl" />
             <div className="flex flex-col relative px-6 pb-6">
                 <h2 className="m-0 p-0 text-white truncate">{post.module.meta.title}</h2>
-                <p className="m-0 pb-6 text-base text-gray-200 line-clamp-2">{post.module.meta.description}</p>
+                <p className="m-0 pb-6 text-base text-gray-200 line-clamp-2 h-12 mb-2">{post.module.meta.description}</p>
                 <div className="flex">
                     <div className="rounded-full h-12 w-12">
                         <img className="rounded-full" src={post.module.meta.authors[0].image} />

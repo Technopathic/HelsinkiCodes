@@ -186,7 +186,7 @@ const Post = ({ children, meta }) => {
               </div>
             </div>
             <Container className="flex flex-col col-span-2">
-              <Img src={meta.coverImage} alt="cover image" className="mb-8" />
+              {!meta.hideCover && <Img src={meta.coverImage} alt="cover image" className="mb-8" />}
               <div className="flex flex-col leading-8" id="post-content">{children}</div>
             </Container>
             <div className="flex flex-col col-span-1">

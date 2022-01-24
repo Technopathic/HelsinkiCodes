@@ -21,10 +21,10 @@ const App = (props) => {
   const [cookieConsent, setCookieConsent] = useState(false);
 
   const router = useRouter()
-  const excludeHeader = ['/CV', '/intro-mobile', '/Test']
-  const excludeFooter = ['/CV', '/intro-mobile', '/Test']
+  const excludeHeader = []
+  const excludeFooter = []
 
-  usePanelbear('ENQ1HaV0pgl');
+  usePanelbear('11R02Y1R6RX');
 
   useEffect(() => {
     setCookieConsent(localStorage.getItem('cookieConsent'))
@@ -51,7 +51,7 @@ const App = (props) => {
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <div className="flex flex-col justify-between min-h-screen text-gray-700">
-            <Header />
+            {!excludeFooter.includes(router.pathname) && <Header />}
             <Component {...pageProps} />
             {!excludeFooter.includes(router.pathname) && <Footer />}
             {/*!cookieConsent && <CookieConsent acceptCookie={acceptCookie} />*/}
