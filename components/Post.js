@@ -51,14 +51,14 @@ const Post = ({ children, meta }) => {
   return (
     <>
       <Head>
-        <meta name="og:image" property="og:image" content={`${process.env.APP_URL}/${meta.coverImage}`} />
-        <meta name="og:image:secure_url" property="og:image:secure_url" content={`${process.env.APP_URL}/${meta.coverImage}`} />
-
-        <title>{`${meta.title} :: ${process.env.APP_TITLE}`} </title>
+        <title>{`${meta.title} :: ${process.env.APP_TITLE}`}</title>
         <meta name="description" content={meta.description} />
 
         <meta name="og:title" property="og:title" content={`${meta.title} :: ${process.env.APP_SITE_NAME}`} />
         <meta name="og:description" property="og:description" content={meta.description} />
+
+        <meta name="og:image" property="og:image" content={`${process.env.APP_URL}/${meta.coverImage}`} />
+        <meta name="og:image:secure_url" property="og:image:secure_url" content={`${process.env.APP_URL}/${meta.coverImage}`} />
 
       </Head>
       <Toast showToast={showToast} setShowToast={setShowToast} />
@@ -217,10 +217,10 @@ const Post = ({ children, meta }) => {
                 }
               </div>
               <div className="bg-hcGrayBrand py-4 px-4 rounded-xl grid grid-cols-5 gap-4 lg:hidden mt-8">
-                <a className="bg-twitter px-2 py-3 text-white rounded hover:bg-opacity-70 transition-all flex justify-center items-center" href={`https://twitter.com/intent/tweet?url=${router.pathname}&text=${meta.title} @${process.env.APP_SITE_NAME}`}><FaTwitter /></a>
-                <a className="bg-facebook px-2 py-3 text-white rounded hover:bg-opacity-70 transition-all flex justify-center items-center" href={`https://www.facebook.com/share.php?u=${router.pathname}&quote=${meta.title} @${process.env.APP_SITE_NAME}`}><FaFacebookF /></a>
-                <a className="bg-linkedin px-2 py-3 text-white rounded hover:bg-opacity-70 transition-all flex justify-center items-center" href={`https://www.linkedin.com/sharing/share-offsite/?url=${router.pathname}`}><FaLinkedinIn /></a>
-                <a className="bg-flipboard px-2 py-3 text-white rounded hover:bg-opacity-70 transition-all flex justify-center items-center" href={`https://share.flipboard.com/bookmarklet/popout?v=2&title=${meta.title}&url=${router.pathname}`}><SiFlipboard /></a>
+                <a className="bg-twitter px-2 py-3 text-white rounded hover:bg-opacity-70 transition-all flex justify-center items-center" href={`https://twitter.com/intent/tweet?url=${process.env.APP_URL + router.pathname}&text=${meta.title} @${process.env.APP_SITE_NAME}`}><FaTwitter /></a>
+                <a className="bg-facebook px-2 py-3 text-white rounded hover:bg-opacity-70 transition-all flex justify-center items-center" href={`https://www.facebook.com/share.php?u=${process.env.APP_URL + router.pathname}&quote=${meta.title} @${process.env.APP_SITE_NAME}`}><FaFacebookF /></a>
+                <a className="bg-linkedin px-2 py-3 text-white rounded hover:bg-opacity-70 transition-all flex justify-center items-center" href={`https://www.linkedin.com/sharing/share-offsite/?url=${process.env.APP_URL + router.pathname}`}><FaLinkedinIn /></a>
+                <a className="bg-flipboard px-2 py-3 text-white rounded hover:bg-opacity-70 transition-all flex justify-center items-center" href={`https://share.flipboard.com/bookmarklet/popout?v=2&title=${meta.title}&url=${process.env.APP_URL + router.pathname}`}><SiFlipboard /></a>
                 <a className="bg-whiteBrand px-2 py-3 text-blue-brand rounded hover:bg-opacity-70 transition-all flex justify-center items-center" href="#" onClick={() => copyPostUrl(process.env.APP_URL + router.pathname)}><FiLink /></a>
               </div>
               <div className="grid grid-cols-1 gap-8 mt-8 lg:mt-0 lg:grid-cols-1 md:grid-cols-2">
