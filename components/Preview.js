@@ -37,7 +37,7 @@ const MediumPreviewContent = styled.div`
 
 export const LargePreview = ({ post, link }) => (
     <Link href={link} passHref>
-        <a className="relative col-span-2 flex flex-col justify-end rounded-xl shadow-md no-underline" style={{ minHeight: '360px' }}>
+        <a className="relative col-span-2 flex flex-col justify-end rounded-xl shadow-md no-underline max-w-full" style={{ minHeight: '360px' }}>
             <div className="absolute w-full h-full rounded-xl">
                 <img className="object-cover w-full h-full rounded-xl" src={post.module.meta.coverImage} />
             </div>
