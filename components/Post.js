@@ -118,6 +118,7 @@ const Post = ({ children, meta }) => {
           </section>
           <div className="grid grid-cols-1 lg:grid-cols-4 w-full max-w-screen-xl mx-auto my-8 gap-y-8 lg:gap-x-8">
             <div className="flex flex-col col-span-1 gap-8">
+              {meta.demo === "" && meta.source === "" && meta.summary === "" ? null :
               <div className="bg-hcGrayBrand grid grid-cols-3 gap-6 py-4 px-6 rounded-xl">
                 {meta.demo ?
                   <a target="_blank" rel="noopener noreferrer" href={meta.demo} className="no-underline h-16">
@@ -158,7 +159,7 @@ const Post = ({ children, meta }) => {
                     </Primary>
                   </div>
                 }
-              </div>
+              </div>}
               <div className="bg-hcGrayBrand py-4 px-4 rounded-xl hidden lg:flex">
                 {meta.tags ?
                   <div className="flex flex-wrap">
