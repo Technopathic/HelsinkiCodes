@@ -39,14 +39,26 @@ const App = (props) => {
   return (
     <>
       <Head>
+        <title>{process.env.APP_TITLE}</title>
         <meta charSet="utf-8" />
         <meta content="ie=edge" httpEquiv="x-ua-compatible" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta name="description" content={process.env.APP_DESCRIPTION} />
+
+        <meta name="og:title" property="og:title" content={process.env.APP_TITLE} />
+        <meta name="og:site_name" property="og:site_name" content={process.env.APP_SITE_NAME} />
+        <meta name="og:locale" property="og:locale" content={process.env.APP_LOCALE} />
+        <meta name="og:type" property="og:type" content={process.env.APP_TYPE} />
+        <meta name="og:description" property="og:description" content={process.env.APP_DESCRIPTION} />
+        <meta name="og:url" property="og:url" content={process.env.APP_URL} />
+
+        <meta name="og:image:type" property="og:image:type" content={process.env.APP_IMAGE_TYPE} />
+        <meta name="og:image:width" property="og:image:width" content={process.env.APP_IMAGE_WIDTH} />
+        <meta name="og:image:height" property="og:image:height" content={process.env.APP_IMAGE_HEIGHT} />
 
         <meta name="og:image" property="og:image" content={process.env.APP_IMAGE} />
         <meta name="og:image:secure_url" property="og:image:secure_url" content={process.env.APP_IMAGE} />
-
-        <title>{process.env.APP_TITLE}</title>
+        
       </Head>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
