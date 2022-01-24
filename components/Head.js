@@ -1,37 +1,32 @@
 import Head from 'next/head'
-export default ({ title, description, keywords, url = "", language }) => (
+export default ({title, description, image}) => (
 	<Head>
-		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
-		<meta name="theme-color" content="#118b92" />
-		<link rel="manifest" href="/static/manifest/manifest.json" />
+		<meta charSet="utf-8" />
+        <meta content="ie=edge" httpEquiv="x-ua-compatible" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
 
-		<title>{title}</title>
-		<meta name="description" content={description} />
-		<meta name="keywords" content={keywords} />
-		<meta name="author" content="..." />
+        <title>{title || process.env.APP_TITLE}</title>
 
-		<meta property="og:site_name" content="..." />
-		<meta property="og:title" content={title} />
-		<meta property="og:url" content={`...${language}/${url}`} />
-		<meta property="og:image" content={...} />
-		<meta property="og:description" content={description} />
-		<meta property="og:type" content="website" />
+        <meta name="description" content={description || process.env.APP_DESCRIPTION} />
 
-		<meta name="twitter:title" content={title} />
-		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content={...} />
-		<meta name="twitter:card" content="summary_large_image" />
+        <meta name="og:title" property="og:title" content={title || process.env.APP_TITLE} />
+        <meta name="og:site_name" property="og:site_name" content={process.env.APP_SITE_NAME} />
+        <meta name="og:locale" property="og:locale" content={process.env.APP_LOCALE} />
+        <meta name="og:type" property="og:type" content={process.env.APP_TYPE} />
+        <meta name="og:description" property="og:description" content={process.env.APP_DESCRIPTION} />
+        <meta name="og:url" property="og:url" content={process.env.APP_URL} />
 
-		<link rel="alternate" href={`...${url}`} hrefLang="nl" />
-		<link rel="alternate" href={`...${url}`} hrefLang="en" />
-		<link rel="alternate" href={`...${url}`} hrefLang="fr" />
+        <meta name="og:image" property="og:image" content={image || process.env.APP_IMAGE} />
+        <meta name="og:image:secure_url" property="og:image:secure_url" content={image || process.env.APP_IMAGE} />
+        <meta name="og:image:type" property="og:image:type" content={process.env.APP_IMAGE_TYPE} />
+        <meta name="og:image:width" property="og:image:width" content={process.env.APP_IMAGE_WIDTH} />
+        <meta name="og:image:height" property="og:image:height" content={process.env.APP_IMAGE_HEIGHT} />
 
-		<link rel="icon" type="image/png" href={...} sizes="16x16" />
-		<link rel="icon" type="image/png" href={...} sizes="32x32" />
-		<link rel="apple-touch-icon" href={...} />
-		<link rel="apple-touch-icon" sizes="180x180" href={...)} />
-		<link rel="mask-icon" href={...)} color="#d04819"/>
-		<link rel="shortcut icon" href={...} />
-		<meta name="theme-color" content="#118b92" />
+        <link rel="apple-touch-icon" sizes="180x180" href={process.env.APP_APPLE_TOUCH_ICON} />
+        <link rel="icon" type="image/png" sizes="16x16" href={process.env.APP_FAVICON_16x16} />
+        <link rel="icon" type="image/png" sizes="32x32" href={process.env.APP_FAVICON_32x32} />
+
+        <link rel="preload" href="/fonts/Inter-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+        <link rel="preload" href="/fonts/Inter-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
 	</Head>
 );

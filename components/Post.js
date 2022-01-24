@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Head from 'next/head'
+import Head from './Head'
 import { useRouter } from 'next/router'
 import styled from '@emotion/styled'
 import { getRelated } from "../actions"
@@ -50,7 +50,11 @@ const Post = ({ children, meta }) => {
 
   return (
     <>
-     
+      <Head 
+        title={`${meta.title} :: ${process.env.APP_TITLE}`}
+        description={meta.description}
+        image={`${process.env.APP_URL + meta.coverImage}`}
+      />
       <Toast showToast={showToast} setShowToast={setShowToast} />
       <section className="flex flex-col items-center m-auto mt-10 md:mt-28 max-w-screen-xl px-4 xl:px-0">
         <div className="flex flex-col w-full post md:px-0">

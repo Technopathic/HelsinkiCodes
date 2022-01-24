@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { getPosts } from '../actions'
+import Head from '../components/Head'
 
 import SideText from '../components/SideText'
 import { LargePreview, SmallPreview, MediumPreview, CardPreview } from '../components/Preview'
@@ -53,24 +54,27 @@ const Home = (props) => {
   }
 
   return (
-    <main className="my-10 md:my-28 flex flex-col items-center mx-8">
-      {props.posts.map((chunkContent, i) => (
-        <Chunk items={chunkContent} key={i} />
-      ))}
-      <section className="flex w-full max-w-screen-xl justify-between items-center mt-14">
-        <div className="h-px bg-divider flex-grow"></div>
-        {props.page * process.env.POST_COUNT >= props.postsCount ?
-          <div className="px-6 py-2 text-center mx-4">You've reached the end!<span className="text-2xl ml-2">👋</span></div>
-          :
-          isLoadingMore ?
-            <div></div>
-            : <span onClick={loadContent} className="px-6 py-2 border border-solid border-gray-300 rounded-full cursor-pointer text-center mx-4">Load More</span>
-        }
-        <div className="h-px bg-divider flex-grow"></div>
-      </section>
-      <SideText text="Helsinki" direction="left" move="down" time={10} delay={1} />
-      <SideText text="Codes" direction="right" move="up" time={11} delay={4} />
-    </main>
+    <>
+      <Head />
+      <main className="my-10 md:my-28 flex flex-col items-center mx-8">
+        {props.posts.map((chunkContent, i) => (
+          <Chunk items={chunkContent} key={i} />
+        ))}
+        <section className="flex w-full max-w-screen-xl justify-between items-center mt-14">
+          <div className="h-px bg-divider flex-grow"></div>
+          {props.page * process.env.POST_COUNT >= props.postsCount ?
+            <div className="px-6 py-2 text-center mx-4">You've reached the end!<span className="text-2xl ml-2">👋</span></div>
+            :
+            isLoadingMore ?
+              <div></div>
+              : <span onClick={loadContent} className="px-6 py-2 border border-solid border-gray-300 rounded-full cursor-pointer text-center mx-4">Load More</span>
+          }
+          <div className="h-px bg-divider flex-grow"></div>
+        </section>
+        <SideText text="Helsinki" direction="left" move="down" time={10} delay={1} />
+        <SideText text="Codes" direction="right" move="up" time={11} delay={4} />
+      </main>
+    </>
   )
 }
 

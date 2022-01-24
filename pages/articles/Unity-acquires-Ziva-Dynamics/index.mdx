@@ -6,8 +6,6 @@ import DemoAndSource from '../../../components/DemoAndSource'
 import Img from '../../../components/Img'
 import Blockquote from '../../../components/Blockquote'
 import Video from '../../../components/Video'
-import Head from 'next/head'
-
 
 export const meta = {
   title: 'Unity acquires Ziva Dynamics',
@@ -32,20 +30,7 @@ export const meta = {
   hideCover: true
 }
 
-export default ({ children }) => 
-( 
-    <>
-        <Head>
-            <title>{`${meta.title} :: ${process.env.APP_TITLE}`}</title>
-            <meta name="description" content={meta.description} />
-            <meta name="og:title" property="og:title" content={`${meta.title} :: ${process.env.APP_SITE_NAME}`} />
-            <meta name="og:description" property="og:description" content={meta.description} />
-            <meta name="og:image" property="og:image" content={`${process.env.APP_URL + meta.coverImage}`} />
-            <meta name="og:image:secure_url" property="og:image:secure_url" content={`${process.env.APP_URL + meta.coverImage}`} />
-        </Head>
-        <Post meta={meta}>{children}</Post>
-    </>
-)
+export default ({ children }) => <Post meta={meta}>{children}</Post>
 
 <Video url="https://www.youtube.com/watch?v=xeBpp3GcScM" className="mb-4" />
 
