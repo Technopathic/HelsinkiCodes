@@ -50,17 +50,7 @@ const Post = ({ children, meta }) => {
 
   return (
     <>
-      <Head>
-        <title>{`${meta.title} :: ${process.env.APP_TITLE}`}</title>
-        <meta name="description" content={meta.description} />
-
-        <meta name="og:title" property="og:title" content={`${meta.title} :: ${process.env.APP_SITE_NAME}`} />
-        <meta name="og:description" property="og:description" content={meta.description} />
-
-        <meta name="og:image" property="og:image" content={`${process.env.APP_URL + meta.coverImage}`} />
-        <meta name="og:image:secure_url" property="og:image:secure_url" content={`${process.env.APP_URL + meta.coverImage}`} />
-
-      </Head>
+     
       <Toast showToast={showToast} setShowToast={setShowToast} />
       <section className="flex flex-col items-center m-auto mt-10 md:mt-28 max-w-screen-xl px-4 xl:px-0">
         <div className="flex flex-col w-full post md:px-0">
