@@ -101,7 +101,7 @@ const Post = ({ children, meta }) => {
                         <CgFormatSlash size={28} className="-ml-5 text-red-brand" style={{ marginTop: "-2px" }} />
                       </div>
                       <span className="text-gray-500">
-                        Read time &nbsp;
+                        Read time&nbsp;
                       </span>
                       <span className="font-semibold text-blue-brand">
                         {readingTime()} min
