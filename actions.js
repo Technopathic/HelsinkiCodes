@@ -1,21 +1,15 @@
-import {
-    SET_COOKIE_CONSENT,
-    GET_POSTS
-} from './constants'
-import axios from 'axios'
-
-export const getPosts = (page = 0, count) => async (dispatch) => {
+export const getPosts = async (page = 0, count) => {
     const r = require.context("./pages/articles/", true, /\index.mdx$/)
 
     const res = r.keys().map((fileName) => ({
         link: fileName.substr(1).replace(/\.mdx$/, "").replace(/\index$/, ""),
-        module: r(fileName)
+        meta: r(fileName).meta
     }))
-        .sort((a, b) => new Date(b.module.meta.date) - new Date(a.module.meta.date))
+        .sort((a, b) => new Date(b.meta.date) - new Date(a.meta.date))
 
     const posts = res.slice(page * count, (page * count) + count)
 
-    dispatch({ type: GET_POSTS, posts, count: res.length })
+    return ({ posts, count: res.length })
 }
 
 export const searchPosts = async (query) => {
@@ -32,7 +26,7 @@ export const searchPosts = async (query) => {
     return posts
 }
 
-export const showCategory = (query) => async (dispatch) => {
+/*export const showCategory = (query) => async (dispatch) => {
     const r = require.context("./pages/articles/", true, /\index.mdx$/)
 
     const res = r.keys().map((fileName) => ({
@@ -44,16 +38,16 @@ export const showCategory = (query) => async (dispatch) => {
     const posts = res.filter(post => post.module.meta.category === query)
 
     dispatch({ type: SHOW_CATEGORY, posts })
-}
+}*/
 
 export const getRelated = (meta) => {
     const r = require.context("./pages/articles/", true, /\index.mdx$/)
 
     const res = r.keys().map((fileName) => ({
         link: fileName.substr(1).replace(/\.mdx$/, "").replace(/\index$/, ""),
-        module: r(fileName)
+        meta: r(fileName).meta
     }))
-        .sort((a, b) => new Date(b.module.meta.date) - new Date(a.module.meta.date))
+        .sort((a, b) => new Date(b.meta.date) - new Date(a.meta.date))
 
     const posts = []
 
@@ -61,15 +55,15 @@ export const getRelated = (meta) => {
         if (posts.length < 6) {
             posts.push(...res.filter(post => {
 
-                if (!post.module.meta.tags.includes(query)) {
+                if (!post.meta.tags.includes(query)) {
                     return false
                 }
 
-                if (post.module.meta.title === meta.title) {
+                if (post.meta.title === meta.title) {
                     return false
                 }
 
-                if (posts.some(checkPost => (checkPost.module.meta.title === post.module.meta.title))) {
+                if (posts.some(checkPost => (checkPost.meta.title === post.meta.title))) {
                     return false
                 }
 
@@ -84,15 +78,15 @@ export const getRelated = (meta) => {
                 return false
             }
 
-            if (post.module.meta.category !== meta.category) {
+            if (post.meta.category !== meta.category) {
                 return false
             }
 
-            if (post.module.meta.title === meta.title) {
+            if (post.meta.title === meta.title) {
                 return false
             }
 
-            if (posts.some(checkPost => (checkPost.module.meta.title === post.module.meta.title))) {
+            if (posts.some(checkPost => (checkPost.meta.title === post.meta.title))) {
                 return false
             }
 

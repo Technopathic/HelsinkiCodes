@@ -2,10 +2,6 @@ import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import { usePanelbear } from '@panelbear/panelbear-nextjs';
 import { useRouter } from 'next/router'
-import { Provider } from 'react-redux'
-import { PersistGate } from 'redux-persist/integration/react'
-import { persistStore } from 'redux-persist'
-import configureStore from '../store'
 
 import '../globals.css'
 import "../prism-synthwave84.css";
@@ -13,9 +9,6 @@ import "../prism-synthwave84.css";
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import CookieConsent from '../components/CookieConsent'
-
-const store = configureStore()
-const persistor = persistStore(store)
 
 const App = (props) => {
   const [cookieConsent, setCookieConsent] = useState(false);
@@ -48,16 +41,12 @@ const App = (props) => {
 
         <title>{process.env.APP_TITLE}</title>
       </Head>
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <div className="flex flex-col justify-between min-h-screen text-gray-700">
-            {!excludeHeader.includes(router.pathname) && <Header />}
-            <Component {...pageProps} />
-            {!excludeFooter.includes(router.pathname) && <Footer />}
-            {/*!cookieConsent && <CookieConsent acceptCookie={acceptCookie} />*/}
-          </div>
-        </PersistGate>
-      </Provider>
+      <div className="flex flex-col justify-between min-h-screen text-gray-700">
+        {!excludeHeader.includes(router.pathname) && <Header />}
+        <Component {...pageProps} />
+        {!excludeFooter.includes(router.pathname) && <Footer />}
+        {/*!cookieConsent && <CookieConsent acceptCookie={acceptCookie} />*/}
+      </div>
     </>
   )
 }
