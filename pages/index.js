@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import { connect } from 'react-redux'
 import { getPosts } from '../actions'
+import Head from 'next/head'
 
 import SideText from '../components/SideText'
 import { LargePreview, SmallPreview, MediumPreview, CardPreview } from '../components/Preview'
@@ -38,28 +38,39 @@ const Chunk = ({ items }) => (
 
 const Home = (props) => {
   const [isLoadingMore, setLoadingMore] = useState(false)
+  const [posts, setPosts] = useState([])
+  const [postsCount, setPostsCount] = useState(0)
+  const [postsPage, setPostsPage] = useState(0)
 
-  useEffect(async () => {
-    if (props.posts.length === 0 && props.page === 0) {
-      await loadContent()
-    }
-  }, [])
+  useEffect(() => {
+    updatePosts(props.posts, props.count)
+  }, [props.posts])
+
+  const updatePosts = (resPosts, resCount) => {
+    const currentPosts = posts
+    currentPosts.push(resPosts)
+
+    setPosts(currentPosts)
+    setPostsPage(postsPage + 1)
+    setPostsCount(resCount)
+
+    setLoadingMore(false)
+  }
 
   const loadContent = async () => {
     setLoadingMore(true)
-    await props.getPosts(props.page, process.env.POST_COUNT).then(() => {
-      setLoadingMore(false)
-    })
+    const res = await getPosts(0, process.env.POST_COUNT)
+    updatePosts(res.posts, res.count)
   }
 
   return (
     <main className="my-10 md:my-28 flex flex-col items-center mx-8">
-      {props.posts.map((chunkContent, i) => (
+      {posts.map((chunkContent, i) => (
         <Chunk items={chunkContent} key={i} />
       ))}
       <section className="flex w-full max-w-screen-xl justify-between items-center mt-14">
         <div className="h-px bg-divider flex-grow"></div>
-        {props.page * process.env.POST_COUNT >= props.postsCount ?
+        {postsPage * process.env.POST_COUNT >= postsCount ?
           <div className="px-6 py-2 text-center mx-4">You've reached the end!<span className="text-2xl ml-2">👋</span></div>
           :
           isLoadingMore ?
@@ -74,10 +85,11 @@ const Home = (props) => {
   )
 }
 
-const mapStateToProps = state => ({
-  posts: state.posts,
-  postsCount: state.postsCount,
-  page: state.postsPage
-})
+export async function getStaticProps() {
+  const { posts, count } = await getPosts(0, process.env.POST_COUNT)
+  return {
+    props: { posts, count }
+  }
+}
 
-export default connect(mapStateToProps, { getPosts })(Home)
+export default Home

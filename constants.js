@@ -1,2 +1,0 @@
-export const SET_COOKIE_CONSENT = 'SET_COOKIE_CONSENT'
-export const GET_POSTS = 'GET_POSTS'
