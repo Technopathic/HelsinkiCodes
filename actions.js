@@ -17,11 +17,11 @@ export const searchPosts = async (query) => {
 
     const res = r.keys().map((fileName) => ({
         link: fileName.substr(1).replace(/\.mdx$/, "").replace(/\index$/, ""),
-        module: r(fileName)
+        meta: r(fileName).meta
     }))
-        .sort((a, b) => new Date(b.module.meta.date) - new Date(a.module.meta.date))
+        .sort((a, b) => new Date(b.meta.date) - new Date(a.meta.date))
 
-    const posts = res.filter(post => post.module.meta.title.toLowerCase().includes(query) || post.module.meta.tags.includes(query))
+    const posts = res.filter(post => post.meta.title.toLowerCase().includes(query) || post.meta.tags.includes(query))
 
     return posts
 }
