@@ -59,7 +59,7 @@ const Home = (props) => {
 
   const loadContent = async () => {
     setLoadingMore(true)
-    const res = await getPosts(0, process.env.POST_COUNT)
+    const res = await getPosts(postsPage, process.env.POST_COUNT)
     updatePosts(res.posts, res.count)
   }
 
