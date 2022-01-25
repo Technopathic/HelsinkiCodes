@@ -12,6 +12,7 @@ const env = {
     "APP_DESCRIPTION": "Helsinki Codes is a news and events platform for developers, designers, and enthusiasts located in Finland. Run by NowNano.",
     "APP_TYPE": "website",
     "APP_URL": "https://helsinki.codes",
+    "APP_DOMAIN": "helsinki.codes",
     "APP_IMAGE": "https://helsinki.codes/og-image.png",
     "APP_IMAGE_TYPE": "image/png",
     "APP_IMAGE_WIDTH": "1200",

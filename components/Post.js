@@ -60,6 +60,13 @@ const Post = ({ children, meta }) => {
         <meta name="og:image" property="og:image" content={`${process.env.APP_URL + meta.coverImage}`} />
         <meta name="og:image:secure_url" property="og:image:secure_url" content={`${process.env.APP_URL + meta.coverImage}`} />
 
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="helsinki.codes" />
+        <meta property="twitter:url" content="https://helsinki.codes/articles/Unity-acquires-Ziva-Dynamics/" />
+        <meta name="twitter:title" content={`${meta.title} :: ${process.env.APP_SITE_NAME}`} />
+        <meta name="twitter:description" content={meta.description} />
+        <meta name="twitter:image" content={`${process.env.APP_URL + meta.coverImage}`} />
+
       </Head>
       <Toast showToast={showToast} setShowToast={setShowToast} />
       <section className="flex flex-col items-center m-auto mt-10 md:mt-28 max-w-screen-xl px-4 xl:px-0">

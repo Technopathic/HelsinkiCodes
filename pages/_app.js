@@ -39,7 +39,12 @@ const App = (props) => {
         <meta name="og:image" property="og:image" content={process.env.APP_IMAGE} />
         <meta name="og:image:secure_url" property="og:image:secure_url" content={process.env.APP_IMAGE} />
 
+        <meta name="twitter:title" content={process.env.APP_SITE_NAME} />
+        <meta name="twitter:description" content={process.env.APP_DESCRIPTION} />
+        <meta name="twitter:image" content={process.env.APP_IMAGE} />
+
         <title>{process.env.APP_TITLE}</title>
+        <meta name="description" content={process.env.APP_DESCRIPTION} />
       </Head>
       <div className="flex flex-col justify-between min-h-screen text-gray-700">
         {!excludeHeader.includes(router.pathname) && <Header />}
