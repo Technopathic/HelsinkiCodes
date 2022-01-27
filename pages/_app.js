@@ -46,14 +46,12 @@ const App = (props) => {
         <meta name="og:image:type" property="og:image:type" content={process.env.APP_IMAGE_TYPE} />
         <meta name="og:image:width" property="og:image:width" content={process.env.APP_IMAGE_WIDTH} />
         <meta name="og:image:height" property="og:image:height" content={process.env.APP_IMAGE_HEIGHT} />
-
+        <meta name="og:image" property="og:image" content={process.env.APP_IMAGE} />
+        <meta name="og:image:secure_url" property="og:image:secure_url" content={process.env.APP_IMAGE} />
+        
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content={process.env.APP_DOMAIN} />
         <meta property="twitter:url" content={process.env.APP_URL} />
-
-        <meta name="og:image" property="og:image" content={process.env.APP_IMAGE} />
-        <meta name="og:image:secure_url" property="og:image:secure_url" content={process.env.APP_IMAGE} />
-
         <meta name="twitter:title" content={process.env.APP_SITE_NAME} />
         <meta name="twitter:description" content={process.env.APP_DESCRIPTION} />
         <meta name="twitter:image" content={process.env.APP_IMAGE} />

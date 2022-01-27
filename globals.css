@@ -89,6 +89,8 @@ p {
 ul {
     list-style-type: disc;
     list-style-position: inside;
+    margin-top: 12px;
+    margin-bottom: 12px;
 }
 
 li {
