@@ -43,8 +43,8 @@ export const LargePreview = ({ post, link }) => (
             </div>
             <div className="absolute w-full h-full bg-blackBrand bg-opacity-30 rounded-xl" />
             <div className="flex flex-col relative px-6 pb-6">
-                <h2 className="m-0 p-0 text-white truncate">{post.meta.title}</h2>
-                <p className="m-0 pb-6 text-base text-gray-200 line-clamp-2 h-12 mb-2">{post.meta.description}</p>
+                <h2 className="m-0 p-0 text-white truncate"  style={{textShadow: '0px 0px 3px #000000'}}>{post.meta.title}</h2>
+                <p className="m-0 pb-6 text-base text-white line-clamp-2 h-12 mb-2" style={{textShadow: '0px 0px 3px #000000'}}>{post.meta.description}</p>
                 <div className="flex">
                     <div className="rounded-full h-12 w-12">
                         <img className="rounded-full" src={post.meta.authors[0].image} />
@@ -72,8 +72,8 @@ export const SmallPreview = ({ post, link, showPreviewImage }) => (
             }
             <div className="flex flex-col justify-between h-full p-6 relative">
                 <div className="flex flex-col pb-4">
-                    <h4 className={`m-0 pb-2 truncate ${showPreviewImage && 'text-white'}`}>{post.meta.title}</h4>
-                    <p className={`m-0 p-0 text-base line-clamp-2 ${showPreviewImage ? 'text-gray-200' : 'text-gray-600'}`}>{post.meta.description}</p>
+                    <h4 className={`m-0 pb-2 truncate ${showPreviewImage && 'text-white'}`} style={{textShadow: showPreviewImage ? '0px 0px 3px #000000' : 'none'}}>{post.meta.title}</h4>
+                    <p className={`m-0 p-0 text-base line-clamp-2 ${showPreviewImage ? 'text-gray-100' : 'text-gray-600'}`} style={{textShadow: showPreviewImage ? '0px 0px 3px #000000' : 'none'}}>{post.meta.description}</p>
                 </div>
                 <div className="flex">
                     <div className="rounded-full h-12 w-12">
@@ -106,8 +106,8 @@ export const MediumPreview = ({ post, link, showPreviewImage }) => (
             }
             <MediumPreviewContent className={`flex flex-col relative justify-between p-6 h-full rounded-b-2xl sm:rounded-none sm:rounded-r-xl ${showPreviewImage ? 'w-full' : 'w-full sm:w-3/5 bg-whiteBrand'}`} showPreviewImage={showPreviewImage}>
                 <div className="flex flex-col pb-4">
-                    <h4 className={`m-0 pb-2 truncate ${showPreviewImage && 'text-white'}`}>{post.meta.title}</h4>
-                    <p className={`m-0 p-0 text-base line-clamp-2 ${showPreviewImage ? 'text-gray-200' : 'text-gray-600'}`}>{post.meta.description}</p>
+                    <h4 className={`m-0 pb-2 truncate ${showPreviewImage && 'text-white'}`} style={{textShadow: showPreviewImage ? '0px 0px 3px #000000' : 'none'}}>{post.meta.title}</h4>
+                    <p className={`m-0 p-0 text-base line-clamp-2 ${showPreviewImage ? 'text-gray-100' : 'text-gray-600'}`} style={{textShadow: showPreviewImage ? '0px 0px 3px #000000' : 'none'}}>{post.meta.description}</p>
                 </div>
                 <div className="flex">
                     <div className="rounded-full h-12 w-12">
@@ -157,7 +157,7 @@ export const TransparentPreview = ({ post, link }) => (
             <div className="absolute w-full h-full bg-blackBrand bg-opacity-40 rounded-xl z-20" />
             <div className="flex flex-col justify-between py-4 px-6 relative z-30">
                 <div className="flex flex-col">
-                    <h4 className='m-0 p-0 text-white truncate'>{post.meta.title}</h4>
+                    <h4 className='m-0 p-0 text-white truncate' style={{textShadow: '0px 0px 3px #000000'}}>{post.meta.title}</h4>
                 </div>
             </div>
         </a>
