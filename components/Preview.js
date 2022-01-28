@@ -23,28 +23,15 @@ const Article = styled.a`
     text-decoration:none;
 `
 
-const MediumPreviewImage = styled.div`
-   
-`
-
-const MediumPreviewContent = styled.div`
-
-`
-
-const Frosted = styled.div`
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(8px);
-`
-
 export const LargePreview = ({ post, link, showAuthor }) => (
     <Link href={link} passHref>
-        <a className="relative col-span-2 flex flex-col justify-end no-underline max-w-full" style={{ minHeight: '400px' }}>
-            <div className="w-full h-full rounded-xl shadow-lg">
-                <img className="object-cover w-full h-full rounded-xl" src={post.meta.coverImage} />
+        <a className="relative col-span-2 flex flex-col justify-end no-underline max-w-full shadow-md rounded-xl" style={{ minHeight: '400px' }}>
+            <div className="w-full h-full rounded-t-xl ">
+                <img className="object-cover w-full h-full rounded-t-xl" src={post.meta.coverImage} />
             </div>
-            <div className="flex flex-col relative py-4">
+            <div className="flex flex-col relative p-4 pb-5 bg-whiteBrand rounded-b-xl">
                 <h2 className="m-0 p-0 truncate">{post.meta.title}</h2>
-                <p className="m-0 p-0 line-clamp-2 h-14">{post.meta.description}</p>
+                <p className="m-0 p-0 line-clamp-2 h-14 leading-7">{post.meta.description}</p>
                 {showAuthor && 
                     <div className="flex">
                         <div className="rounded-full h-12 w-12">
@@ -63,13 +50,13 @@ export const LargePreview = ({ post, link, showAuthor }) => (
 
 export const SmallPreview = ({ post, link, showAuthor }) => (
     <Link href={link} passHref>
-        <a className="col-span-1 row-span-1 no-underline flex flex-col justify-end">
-            <div className="h-full rounded-xl w-full shadow-lg">
-                <img className="object-cover h-full rounded-xl w-full" src={post.meta.coverImage} />
+        <a className="col-span-1 row-span-1 no-underline flex flex-col justify-end shadow-md rounded-xl">
+            <div className="h-full rounded-xl w-full rounded-t-xl">
+                <img className="object-cover h-full rounded-t-xl w-full" src={post.meta.coverImage} />
             </div>
-            <div className="flex flex-col justify-between py-4 relative">
+            <div className="flex flex-col justify-between p-4 relative bg-whiteBrand rounded-b-xl">
                 <div className="flex flex-col">
-                    <h3 className={`m-0 p-0 truncate`}>{post.meta.title}</h3>
+                    <h4 className={`m-0 p-0 truncate`}>{post.meta.title}</h4>
                     <p className={`m-0 p-0 text-base line-clamp-2 text-gray-600`}>{post.meta.description}</p>
                 </div>
                 {showAuthor && 
@@ -90,13 +77,13 @@ export const SmallPreview = ({ post, link, showAuthor }) => (
 
 export const MediumPreview = ({ post, link, showPreviewImage, showAuthor }) => (
     <Link href={link} passHref>
-        <a className={`flex flex-col sm:flex-row relative no-underline`}>
-            <MediumPreviewImage className="w-full sm:w-2/5 rounded-xl shadow-lg">
-                <img className="object-cover h-full rounded-xl" src={post.meta.coverImage} />
-            </MediumPreviewImage>
-            <MediumPreviewContent className={`flex flex-col justify-between px-0 py-4 sm:px-4 sm:py-0 h-full w-full sm:w-3/5`} showPreviewImage={showPreviewImage}>
+        <a className={`flex flex-col sm:flex-row relative no-underline shadow-md`}>
+            <div className="w-full rounded-t-xl sm:w-2/5 sm:rounded-t-none sm:rounded-l-xl">
+                <img className="object-cover h-full rounded-t-xl sm:rounded-t-none sm:rounded-l-xl" src={post.meta.coverImage} />
+            </div>
+            <div className={`flex flex-col justify-between p-4 h-full w-full sm:w-3/5 rounded-b-xl sm:rounded-r-xl bg-whiteBrand`} showPreviewImage={showPreviewImage}>
                 <div className="flex flex-col">
-                    <h3 className={`m-0 pb-2 truncate`}>{post.meta.title}</h3>
+                    <h4 className={`m-0 pb-2 truncate`}>{post.meta.title}</h4>
                     <p className={`m-0 p-0 text-base line-clamp-2  text-gray-600`}>{post.meta.description}</p>
                 </div>
                 {showAuthor && 
@@ -110,20 +97,20 @@ export const MediumPreview = ({ post, link, showPreviewImage, showAuthor }) => (
                         </div>
                     </div>
                 }
-            </MediumPreviewContent>
+            </div>
         </a>
     </Link>
 )
 
 export const CardPreview = ({ post, link, showAuthor }) => (
     <Link href={link} passHref>
-        <a className="flex flex-col relative rounded-xl no-underline">
-            <div className="w-full relative overflow-hidden rounded-xl shadow-md " style={{ height: '220px' }}>
-                <img className="object-cover h-full w-full" src={post.meta.coverImage} />
+        <a className="flex flex-col relative rounded-xl no-underline shadow-md rounded-xl">
+            <div className="w-full relative overflow-hidden rounded-t-xl " style={{ height: '220px' }}>
+                <img className="object-cover h-full w-full rounded-t-xl" src={post.meta.coverImage} />
             </div>
-            <div className="flex flex-col py-4 w-full justify-between" style={{ height: '140px' }}>
+            <div className="flex flex-col p-4 w-full justify-between rounded-b-xl bg-whiteBrand" style={{ height: '140px' }}>
                 <div className="flex flex-col pb-4">
-                    <h3 className={`m-0 pb-2 truncate`}>{post.meta.title}</h3>
+                    <h4 className={`m-0 pb-2 truncate`}>{post.meta.title}</h4>
                     <p className={`m-0 p-0 text-base text-gray-600 line-clamp-2`}>{post.meta.description}</p>
                 </div>
                 {showAuthor && 
