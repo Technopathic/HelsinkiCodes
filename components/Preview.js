@@ -24,125 +24,119 @@ const Article = styled.a`
 `
 
 const MediumPreviewImage = styled.div`
-    @media(max-width: 425px) {
-        height: 220px;
-    }
+   
 `
 
 const MediumPreviewContent = styled.div`
-    @media(max-width: 425px) {
-        height: ${props => props.showPreviewImage ? '460px' : '240px'};
-    }
+
 `
 
-export const LargePreview = ({ post, link }) => (
+const Frosted = styled.div`
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+`
+
+export const LargePreview = ({ post, link, showAuthor }) => (
     <Link href={link} passHref>
-        <a className="relative col-span-2 flex flex-col justify-end rounded-xl shadow-md no-underline max-w-full" style={{ minHeight: '360px' }}>
-            <div className="absolute w-full h-full rounded-xl">
+        <a className="relative col-span-2 flex flex-col justify-end no-underline max-w-full" style={{ minHeight: '400px' }}>
+            <div className="w-full h-full rounded-xl shadow-lg">
                 <img className="object-cover w-full h-full rounded-xl" src={post.meta.coverImage} />
             </div>
-            <div className="absolute w-full h-full bg-blackBrand bg-opacity-30 rounded-xl" />
-            <div className="flex flex-col relative px-6 pb-6">
-                <h2 className="m-0 p-0 text-white truncate"  style={{textShadow: '0px 0px 3px #000000'}}>{post.meta.title}</h2>
-                <p className="m-0 pb-6 text-base text-white line-clamp-2 h-12 mb-2" style={{textShadow: '0px 0px 3px #000000'}}>{post.meta.description}</p>
-                <div className="flex">
-                    <div className="rounded-full h-12 w-12">
-                        <img className="rounded-full" src={post.meta.authors[0].image} />
+            <div className="flex flex-col relative py-4">
+                <h2 className="m-0 p-0 truncate">{post.meta.title}</h2>
+                <p className="m-0 p-0 line-clamp-2 h-14">{post.meta.description}</p>
+                {showAuthor && 
+                    <div className="flex">
+                        <div className="rounded-full h-12 w-12">
+                            <img className="rounded-full" src={post.meta.authors[0].image} />
+                        </div>
+                        <div className="flex flex-col ml-4 justify-center">
+                            <span className="text-gray-100 text-sm">{post.meta.authors[0].name}</span>
+                            <span className="text-gray-100 text-sm">{post.meta.date}</span>
+                        </div>
                     </div>
-                    <div className="flex flex-col ml-4 justify-center">
-                        <span className="text-gray-100 text-sm">{post.meta.authors[0].name}</span>
-                        <span className="text-gray-100 text-sm">{post.meta.date}</span>
-                    </div>
-                </div>
+                }
             </div>
         </a>
     </Link>
 )
 
-export const SmallPreview = ({ post, link, showPreviewImage }) => (
+export const SmallPreview = ({ post, link, showAuthor }) => (
     <Link href={link} passHref>
-        <a className="relative col-span-1 row-span-1 bg-whiteBrand rounded-xl shadow-md no-underline">
-            {showPreviewImage &&
-                <div className="absolute h-full rounded-xl">
-                    <img className="object-cover h-full rounded-xl" src={post.meta.coverImage} />
+        <a className="col-span-1 row-span-1 no-underline flex flex-col justify-end">
+            <div className="h-full rounded-xl w-full shadow-lg">
+                <img className="object-cover h-full rounded-xl w-full" src={post.meta.coverImage} />
+            </div>
+            <div className="flex flex-col justify-between py-4 relative">
+                <div className="flex flex-col">
+                    <h3 className={`m-0 p-0 truncate`}>{post.meta.title}</h3>
+                    <p className={`m-0 p-0 text-base line-clamp-2 text-gray-600`}>{post.meta.description}</p>
                 </div>
-            }
-            {showPreviewImage &&
-                <div className="absolute w-full h-full bg-blackBrand bg-opacity-40 rounded-xl" />
-            }
-            <div className="flex flex-col justify-between h-full p-6 relative">
-                <div className="flex flex-col pb-4">
-                    <h4 className={`m-0 pb-2 truncate ${showPreviewImage && 'text-white'}`} style={{textShadow: showPreviewImage ? '0px 0px 3px #000000' : 'none'}}>{post.meta.title}</h4>
-                    <p className={`m-0 p-0 text-base line-clamp-2 ${showPreviewImage ? 'text-gray-100' : 'text-gray-600'}`} style={{textShadow: showPreviewImage ? '0px 0px 3px #000000' : 'none'}}>{post.meta.description}</p>
-                </div>
-                <div className="flex">
-                    <div className="rounded-full h-12 w-12">
-                        <img className="rounded-full" src={post.meta.authors[0].image} />
+                {showAuthor && 
+                    <div className="flex">
+                        <div className="rounded-full h-12 w-12">
+                            <img className="rounded-full" src={post.meta.authors[0].image} />
+                        </div>
+                        <div className="flex flex-col ml-4 justify-center">
+                            <span className={`text-sm text-gray-600`}>{post.meta.authors[0].name}</span>
+                            <span className={`text-sm text-gray-600`}>{post.meta.date}</span>
+                        </div>
                     </div>
-                    <div className="flex flex-col ml-4 justify-center">
-                        <span className={`text-sm ${showPreviewImage ? 'text-gray-100' : 'text-gray-600'}`}>{post.meta.authors[0].name}</span>
-                        <span className={`text-sm ${showPreviewImage ? 'text-gray-100' : 'text-gray-600'}`}>{post.meta.date}</span>
-                    </div>
-                </div>
+                }
             </div>
         </a>
     </Link>
 )
 
-export const MediumPreview = ({ post, link, showPreviewImage }) => (
+export const MediumPreview = ({ post, link, showPreviewImage, showAuthor }) => (
     <Link href={link} passHref>
-        <a className={`flex flex-col sm:flex-row relative rounded-xl shadow-md no-underline`}>
-            {showPreviewImage ?
-                <div className="absolute rounded-xl h-full w-full overflow-hidden flex justify-center items-center">
-                    <img className="object-cover rounded-xl h-full w-full" src={post.meta.coverImage} />
+        <a className={`flex flex-col sm:flex-row relative no-underline`}>
+            <MediumPreviewImage className="w-full sm:w-2/5 rounded-xl shadow-lg">
+                <img className="object-cover h-full rounded-xl" src={post.meta.coverImage} />
+            </MediumPreviewImage>
+            <MediumPreviewContent className={`flex flex-col justify-between px-0 py-4 sm:px-4 sm:py-0 h-full w-full sm:w-3/5`} showPreviewImage={showPreviewImage}>
+                <div className="flex flex-col">
+                    <h3 className={`m-0 pb-2 truncate`}>{post.meta.title}</h3>
+                    <p className={`m-0 p-0 text-base line-clamp-2  text-gray-600`}>{post.meta.description}</p>
                 </div>
-                :
-                <MediumPreviewImage className="w-full sm:w-2/5 rounded-t-2xl sm:rounded-none sm:rounded-l-2xl">
-                    <img className="object-cover h-full rounded-t-2xl sm:rounded-none sm:rounded-l-xl" src={post.meta.coverImage} />
-                </MediumPreviewImage>
-            }
-            {showPreviewImage &&
-                <div className="absolute w-full h-full bg-blackBrand bg-opacity-40 rounded-xl" />
-            }
-            <MediumPreviewContent className={`flex flex-col relative justify-between p-6 h-full rounded-b-2xl sm:rounded-none sm:rounded-r-xl ${showPreviewImage ? 'w-full' : 'w-full sm:w-3/5 bg-whiteBrand'}`} showPreviewImage={showPreviewImage}>
-                <div className="flex flex-col pb-4">
-                    <h4 className={`m-0 pb-2 truncate ${showPreviewImage && 'text-white'}`} style={{textShadow: showPreviewImage ? '0px 0px 3px #000000' : 'none'}}>{post.meta.title}</h4>
-                    <p className={`m-0 p-0 text-base line-clamp-2 ${showPreviewImage ? 'text-gray-100' : 'text-gray-600'}`} style={{textShadow: showPreviewImage ? '0px 0px 3px #000000' : 'none'}}>{post.meta.description}</p>
-                </div>
-                <div className="flex">
-                    <div className="rounded-full h-12 w-12">
-                        <img className="rounded-full" src={post.meta.authors[0].image} />
+                {showAuthor && 
+                    <div className="flex">
+                        <div className="rounded-full h-12 w-12">
+                            <img className="rounded-full" src={post.meta.authors[0].image} />
+                        </div>
+                        <div className="flex flex-col ml-4 justify-center">
+                            <span className={`text-sm text-gray-600`}>{post.meta.authors[0].name}</span>
+                            <span className={`text-sm text-gray-600`}>{post.meta.date}</span>
+                        </div>
                     </div>
-                    <div className="flex flex-col ml-4 justify-center">
-                        <span className={`text-sm ${showPreviewImage ? 'text-gray-100' : 'text-gray-600'}`}>{post.meta.authors[0].name}</span>
-                        <span className={`text-sm ${showPreviewImage ? 'text-gray-100' : 'text-gray-600'}`}>{post.meta.date}</span>
-                    </div>
-                </div>
+                }
             </MediumPreviewContent>
         </a>
     </Link>
 )
 
-export const CardPreview = ({ post, link }) => (
+export const CardPreview = ({ post, link, showAuthor }) => (
     <Link href={link} passHref>
-        <a className="flex flex-col relative rounded-xl shadow-md no-underline">
-            <div className="w-full relative overflow-hidden rounded-t-xl" style={{ height: '220px' }}>
-                <img className="object-cover h-full" src={post.meta.coverImage} />
+        <a className="flex flex-col relative rounded-xl no-underline">
+            <div className="w-full relative overflow-hidden rounded-xl shadow-md " style={{ height: '220px' }}>
+                <img className="object-cover h-full w-full" src={post.meta.coverImage} />
             </div>
-            <div className="flex flex-col p-6 w-full rounded-b-xl bg-whiteBrand justify-between" style={{ height: '240px' }}>
+            <div className="flex flex-col py-4 w-full justify-between" style={{ height: '140px' }}>
                 <div className="flex flex-col pb-4">
-                    <h4 className={`m-0 pb-2 truncate`}>{post.meta.title}</h4>
+                    <h3 className={`m-0 pb-2 truncate`}>{post.meta.title}</h3>
                     <p className={`m-0 p-0 text-base text-gray-600 line-clamp-2`}>{post.meta.description}</p>
                 </div>
-                <div className="flex">
-                    <div className="rounded-full h-12 w-12">
-                        <img className="rounded-full" src={post.meta.authors[0].image} />
+                {showAuthor && 
+                    <div className="flex">
+                        <div className="rounded-full h-12 w-12">
+                            <img className="rounded-full" src={post.meta.authors[0].image} />
+                        </div>
+                        <div className="flex flex-col ml-4 justify-center">
+                            <span className={`text-sm text-gray-600`}>{post.meta.authors[0].name}</span>
+                            <span className={`text-sm text-gray-600`}>{post.meta.date}</span>
+                        </div>
                     </div>
-                    <div className="flex flex-col ml-4 justify-center">
-                        <span className={`text-sm text-gray-600`}>{post.meta.authors[0].name}</span>
-                        <span className={`text-sm text-gray-600`}>{post.meta.date}</span>
-                    </div>
-                </div>
+                }
             </div>
         </a>
     </Link>

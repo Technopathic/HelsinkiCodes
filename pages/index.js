@@ -8,28 +8,28 @@ import { LargePreview, SmallPreview, MediumPreview, CardPreview } from '../compo
 const Chunk = ({ items }) => (
   <div className="mb-8">
     {items.length > 0 &&
-      <section className="grid grid-cols-1 lg:grid-cols-4 w-full max-w-screen-xl gap-8">
+      <section className="grid grid-cols-1 lg:grid-cols-4 w-full max-w-screen-xl gap-12">
         {items.map((post, i) => (
           i === 0 && <LargePreview key={post.link} post={post} link={`articles${post.link}`} />
         ))}
-        <div className="col-span-2 grid-cols-1 grid sm:grid-cols-2 grid-rows-2 gap-8">
+        <div className="col-span-2 grid-cols-1 grid sm:grid-cols-2 grid-rows-2 gap-12">
           {items.map((post, i) => (
-            i > 0 && i < 5 && <SmallPreview key={post.link} post={post} link={`articles${post.link}`} showPreviewImage={i === 2 ? true : false} />
+            i > 0 && i < 5 && <SmallPreview key={post.link} post={post} link={`articles${post.link}`} showPreviewImage={true} />
           ))}
         </div>
       </section>
     }
     {items.length >= 5 &&
-      <section className="w-full max-w-screen-xl grid grid-cols-1 lg:grid-cols-2 grid-rows-2 gap-8 pt-8">
+      <section className="w-full max-w-screen-xl grid grid-cols-1 lg:grid-cols-2 grid-rows-2 gap-12 pt-12">
         {items.map((post, i) => (
           i >= 5 && i < 9 && <MediumPreview key={post.link} post={post} link={`articles${post.link}`} showPreviewImage={i === 6 ? true : false} />
         ))}
       </section>
     }
     {items.length >= 8 &&
-      <section className="w-full max-w-screen-xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pt-8">
+      <section className="w-full max-w-screen-xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 pt-12">
         {items.map((post, i) => (
-          i >= 8 && i < 12 && <CardPreview key={post.link} post={post} link={`articles${post.link}`} />
+          i >= 8 && i < 12 && <SmallPreview key={post.link} post={post} link={`articles${post.link}`} />
         ))}
       </section>
     }
