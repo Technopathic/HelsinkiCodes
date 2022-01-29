@@ -1,6 +1,8 @@
 import styled from '@emotion/styled'
 import Link from 'next/link'
 
+import { CgFormatSlash } from 'react-icons/cg'
+
 const NewsArticle = styled.a`
     height: 600px;
     text-decoration: none;
@@ -23,7 +25,7 @@ const Article = styled.a`
     text-decoration:none;
 `
 
-export const LargePreview = ({ post, link, showAuthor }) => (
+export const LargePreview = ({ post, link }) => (
     <Link href={link} passHref>
         <a className="relative col-span-2 flex flex-col justify-end no-underline max-w-full shadow-md rounded-xl" style={{ minHeight: '400px' }}>
             <div className="w-full h-full rounded-t-xl ">
@@ -32,17 +34,16 @@ export const LargePreview = ({ post, link, showAuthor }) => (
             <div className="flex flex-col relative p-4 pb-5 bg-whiteBrand rounded-b-xl">
                 <h2 className="m-0 p-0 truncate">{post.meta.title}</h2>
                 <p className="m-0 p-0 line-clamp-2 h-14 leading-7">{post.meta.description}</p>
-                {showAuthor && 
+                <div className="flex mt-4 justify-between">
                     <div className="flex">
-                        <div className="rounded-full h-12 w-12">
-                            <img className="rounded-full" src={post.meta.authors[0].image} />
+                        <div className="flex">
+                            <CgFormatSlash size={20} className="-ml-1 text-red-brand" style={{ marginTop: "-1px" }} />
+                            <CgFormatSlash size={20} className="-ml-4 text-red-brand" style={{ marginTop: "-1px" }} />
                         </div>
-                        <div className="flex flex-col ml-4 justify-center">
-                            <span className="text-gray-100 text-sm">{post.meta.authors[0].name}</span>
-                            <span className="text-gray-100 text-sm">{post.meta.date}</span>
-                        </div>
+                        <span className="text-sm -ml-1 uppercase text-red-brand">{post.meta.category}</span>
                     </div>
-                }
+                    <span className={`text-sm text-gray-600`}>{post.meta.date}</span>
+                </div>
             </div>
         </a>
     </Link>
@@ -58,6 +59,16 @@ export const SmallPreview = ({ post, link, showAuthor }) => (
                 <div className="flex flex-col">
                     <h4 className={`m-0 p-0 truncate`}>{post.meta.title}</h4>
                     <p className={`m-0 p-0 text-base line-clamp-2 text-gray-600`}>{post.meta.description}</p>
+                </div>
+                <div className="flex mt-4 justify-between">
+                     <div className="flex">
+                        <div className="flex">
+                            <CgFormatSlash size={20} className="-ml-1 text-red-brand" style={{ marginTop: "-1px" }} />
+                            <CgFormatSlash size={20} className="-ml-4 text-red-brand" style={{ marginTop: "-1px" }} />
+                        </div>
+                        <span className="text-sm -ml-1 uppercase text-red-brand">{post.meta.category}</span>
+                    </div>
+                    <span className={`text-sm text-gray-600`}>{post.meta.date}</span>
                 </div>
                 {showAuthor && 
                     <div className="flex">
@@ -86,6 +97,16 @@ export const MediumPreview = ({ post, link, showPreviewImage, showAuthor }) => (
                     <h4 className={`m-0 pb-2 truncate`}>{post.meta.title}</h4>
                     <p className={`m-0 p-0 text-base line-clamp-2  text-gray-600`}>{post.meta.description}</p>
                 </div>
+                <div className="flex mt-4 justify-between">
+                     <div className="flex">
+                        <div className="flex">
+                            <CgFormatSlash size={20} className="-ml-1 text-red-brand" style={{ marginTop: "-1px" }} />
+                            <CgFormatSlash size={20} className="-ml-4 text-red-brand" style={{ marginTop: "-1px" }} />
+                        </div>
+                        <span className="text-sm -ml-1 uppercase text-red-brand">{post.meta.category}</span>
+                    </div>
+                    <span className={`text-sm text-gray-600`}>{post.meta.date}</span>
+                </div>
                 {showAuthor && 
                     <div className="flex">
                         <div className="rounded-full h-12 w-12">
@@ -108,10 +129,20 @@ export const CardPreview = ({ post, link, showAuthor }) => (
             <div className="w-full relative overflow-hidden rounded-t-xl " style={{ height: '220px' }}>
                 <img className="object-cover h-full w-full rounded-t-xl" src={post.meta.coverImage} />
             </div>
-            <div className="flex flex-col p-4 w-full justify-between rounded-b-xl bg-whiteBrand" style={{ height: '140px' }}>
+            <div className="flex flex-col p-4 w-full justify-between rounded-b-xl bg-whiteBrand" style={{ minHeight: '140px' }}>
                 <div className="flex flex-col pb-4">
                     <h4 className={`m-0 pb-2 truncate`}>{post.meta.title}</h4>
                     <p className={`m-0 p-0 text-base text-gray-600 line-clamp-2`}>{post.meta.description}</p>
+                </div>
+                <div className="flex mt-4 justify-between">
+                     <div className="flex">
+                        <div className="flex">
+                            <CgFormatSlash size={20} className="-ml-1 text-red-brand" style={{ marginTop: "-1px" }} />
+                            <CgFormatSlash size={20} className="-ml-4 text-red-brand" style={{ marginTop: "-1px" }} />
+                        </div>
+                        <span className="text-sm -ml-1 uppercase text-red-brand">{post.meta.category}</span>
+                    </div>
+                    <span className={`text-sm text-gray-600`}>{post.meta.date}</span>
                 </div>
                 {showAuthor && 
                     <div className="flex">
