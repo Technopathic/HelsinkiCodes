@@ -248,7 +248,7 @@ const Post = ({ children, meta }) => {
       {meta.footer.next ?
         <FooterInfo coverImage={meta.footer.coverImage} next={meta.footer.next} />
         :
-        <FooterEnd title={meta.footer.title} message={meta.footer.message} related={meta.footer.related} demo={meta.footer.demo} source={meta.footer.source} />
+        <FooterEnd title={meta.footer.title} message={meta.footer.message} demo={meta.footer.demo} source={meta.footer.source} />
       }
     </>
   )
