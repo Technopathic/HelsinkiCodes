@@ -65,6 +65,10 @@ const App = (props) => {
 
         <link rel="preload" href="/fonts/Inter-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
         <link rel="preload" href="/fonts/Inter-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9128572572343870"
+     crossorigin="anonymous"></script>
+     
       </Head>
       <div className="flex flex-col justify-between min-h-screen text-gray-700">
         {!excludeHeader.includes(router.pathname) && <Header />}
