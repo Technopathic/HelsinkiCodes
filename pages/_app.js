@@ -62,9 +62,14 @@ const App = (props) => {
         <link rel="apple-touch-icon" sizes="180x180" href={process.env.APP_APPLE_TOUCH_ICON} />
         <link rel="icon" type="image/png" sizes="16x16" href={process.env.APP_FAVICON_16x16} />
         <link rel="icon" type="image/png" sizes="32x32" href={process.env.APP_FAVICON_32x32} />
-
+        {/*
         <link rel="preload" href="/fonts/Inter-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
         <link rel="preload" href="/fonts/Inter-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+  */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=League+Gothic&display=swap" as="style" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=League+Gothic&display=swap" rel="stylesheet" />
         
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9128572572343870"
      crossOrigin="anonymous"></script>
