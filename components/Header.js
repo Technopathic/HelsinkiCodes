@@ -182,7 +182,7 @@ const Header = (props) => {
                     </div>
                     <div className="w-full max-w-screen-md m-auto grid grid-rows-1 my-8 gap-y-8">
                         {searchResults.map((post, i) => (
-                            <MediumPreview key={post.link} post={post} link={'/articles' + post.link} showPreviewImage={false} />
+                            <MediumPreview key={post.link} post={post} link={'/articles' + post.link} />
                         ))}
                     </div>
                 </SearchContainer>

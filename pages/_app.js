@@ -63,11 +63,11 @@ const App = (props) => {
         <link rel="icon" type="image/png" sizes="16x16" href={process.env.APP_FAVICON_16x16} />
         <link rel="icon" type="image/png" sizes="32x32" href={process.env.APP_FAVICON_32x32} />
 
-        <link rel="preload" href="/fonts/Inter-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
-        <link rel="preload" href="/fonts/Inter-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+        <link rel="preload" href="/fonts/Inter-Regular.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/Inter-Bold.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
 
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9128572572343870"
-     crossorigin="anonymous"></script>
+     crossOrigin="anonymous"></script>
      
       </Head>
       <div className="flex flex-col justify-between min-h-screen text-gray-700">

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { getPosts } from '../actions'
-import Head from 'next/head'
 
 import SideText from '../components/SideText'
 import { LargePreview, SmallPreview, MediumPreview, CardPreview } from '../components/Preview'
@@ -10,11 +9,11 @@ const Chunk = ({ items }) => (
     {items.length > 0 &&
       <section className="grid grid-cols-1 lg:grid-cols-4 w-full max-w-screen-xl gap-8">
         {items.map((post, i) => (
-          i === 0 && <LargePreview key={post.link} post={post} link={`articles${post.link}`} />
+          i === 0 && <LargePreview key={post.link} post={post} link={'/articles' + post.link} />
         ))}
         <div className="col-span-2 grid-cols-1 grid sm:grid-cols-2 grid-rows-2 gap-8">
           {items.map((post, i) => (
-            i > 0 && i < 5 && <SmallPreview key={post.link} post={post} link={`articles${post.link}`} showPreviewImage={true} />
+            i > 0 && i < 5 && <SmallPreview key={post.link} post={post} link={'/articles' + post.link} />
           ))}
         </div>
       </section>
@@ -22,14 +21,14 @@ const Chunk = ({ items }) => (
     {items.length >= 5 &&
       <section className="w-full max-w-screen-xl grid grid-cols-1 lg:grid-cols-2 grid-rows-2 gap-8 pt-8">
         {items.map((post, i) => (
-          i >= 5 && i < 9 && <MediumPreview key={post.link} post={post} link={`articles${post.link}`} showPreviewImage={i === 6 ? true : false} />
+          i >= 5 && i < 9 && <MediumPreview key={post.link} post={post} link={'/articles' + post.link} />
         ))}
       </section>
     }
     {items.length >= 8 &&
       <section className="w-full max-w-screen-xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pt-8">
         {items.map((post, i) => (
-          i >= 8 && i < 12 && <CardPreview key={post.link} post={post} link={`articles${post.link}`} />
+          i >= 8 && i < 12 && <CardPreview key={post.link} post={post} link={'/articles' + post.link} />
         ))}
       </section>
     }
@@ -38,13 +37,9 @@ const Chunk = ({ items }) => (
 
 const Home = (props) => {
   const [isLoadingMore, setLoadingMore] = useState(false)
-  const [posts, setPosts] = useState([])
-  const [postsCount, setPostsCount] = useState(0)
-  const [postsPage, setPostsPage] = useState(0)
-
-  useEffect(() => {
-    updatePosts(props.posts, props.count)
-  }, [props.posts])
+  const [posts, setPosts] = useState([props.posts])
+  const [postsCount, setPostsCount] = useState(props.count)
+  const [postsPage, setPostsPage] = useState(1)
 
   const updatePosts = (resPosts, resCount) => {
     const currentPosts = posts

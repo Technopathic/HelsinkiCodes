@@ -86,13 +86,13 @@ export const SmallPreview = ({ post, link, showAuthor }) => (
     </Link>
 )
 
-export const MediumPreview = ({ post, link, showPreviewImage, showAuthor }) => (
+export const MediumPreview = ({ post, link, showAuthor }) => (
     <Link href={link} passHref>
         <a className={`flex flex-col sm:flex-row relative no-underline shadow-md`}>
             <div className="w-full rounded-t-xl sm:w-2/5 sm:rounded-t-none sm:rounded-l-xl">
                 <img className="object-cover h-full rounded-t-xl sm:rounded-t-none sm:rounded-l-xl" src={post.meta.coverImage} />
             </div>
-            <div className={`flex flex-col justify-between p-4 h-full w-full sm:w-3/5 rounded-b-xl sm:rounded-r-xl bg-whiteBrand`} showPreviewImage={showPreviewImage}>
+            <div className={`flex flex-col justify-between p-4 h-full w-full sm:w-3/5 rounded-b-xl sm:rounded-r-xl bg-whiteBrand`}>
                 <div className="flex flex-col">
                     <h4 className={`m-0 pb-2 truncate`}>{post.meta.title}</h4>
                     <p className={`m-0 p-0 text-base line-clamp-2  text-gray-600`}>{post.meta.description}</p>
