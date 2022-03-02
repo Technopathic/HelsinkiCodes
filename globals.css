@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: "inter-regular";
-    src: url(/fonts/Inter-Regular.ttf) format("truetype");
+    src: url('/fonts/Inter-Regular.ttf') format("truetype");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -12,7 +12,7 @@
 
 @font-face {
     font-family: 'inter-bold';
-    src: url(/fonts/Inter-Bold.ttf) format('truetype');
+    src: url('/fonts/Inter-Bold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -23,12 +23,12 @@
     font-weight: normal;
     font-style: normal;
     font-display: swap;
-    src: url(/fonts/Gothic-Regular.otf) format('opentype');
+    src: url('/fonts/Gothic-Regular.otf') format('opentype');
 }
 
 @font-face {
     font-family: "hack-regular";
-    src: url(/fonts/hack-regular.woff2) format("woff2");
+    src: url('/fonts/hack-regular.woff2') format("woff2");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
