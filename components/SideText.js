@@ -27,7 +27,7 @@ const Container = styled.div`
     text-transform: uppercase;
     position: fixed;
     font-size: 16rem;
-    font-family: 'gothic-regular';
+    font-family: 'League Gothic';
     top: ${props => props.direction === 'left' ? '0' : 'auto'};
     bottom: ${props => props.direction === 'right' ? '0' : 'auto'};
     left: ${props => props.direction === 'left' ? '0' : 'auto'};
