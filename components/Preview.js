@@ -125,7 +125,7 @@ export const MediumPreview = ({ post, link, showAuthor }) => (
 
 export const CardPreview = ({ post, link, showAuthor }) => (
     <Link href={link} passHref>
-        <a className="flex flex-col relative rounded-xl no-underline shadow-md rounded-xl">
+        <a className="flex flex-col relative rounded-xl no-underline shadow-md">
             <div className="w-full relative overflow-hidden rounded-t-xl " style={{ height: '220px' }}>
                 <img className="object-cover h-full w-full rounded-t-xl" src={post.meta.coverImage} />
             </div>
@@ -158,6 +158,29 @@ export const CardPreview = ({ post, link, showAuthor }) => (
             </div>
         </a>
     </Link>
+)
+
+export const ResourcePreview = ({ title, description, coverImage, link, category }) => (
+    <a href={link} className="flex flex-col relative rounded-xl no-underline shadow-md" target="_blank" rel="noopener noreferrer">
+        <div className="w-full relative overflow-hidden rounded-t-xl " style={{ height: '220px' }}>
+            <img className="object-cover h-full w-full rounded-t-xl" src={coverImage} />
+        </div>
+        <div className="flex flex-col p-4 w-full justify-between rounded-b-xl bg-whiteBrand" style={{ minHeight: '140px' }}>
+            <div className="flex flex-col pb-4">
+                <h4 className={`m-0 pb-2 truncate`}>{title}</h4>
+                <p className={`m-0 p-0 text-base text-gray-600 line-clamp-3`}>{description}</p>
+            </div>
+            <div className="flex mt-4 justify-between">
+                    <div className="flex">
+                    <div className="flex">
+                        <CgFormatSlash size={20} className="-ml-1 text-red-brand" style={{ marginTop: "-1px" }} />
+                        <CgFormatSlash size={20} className="-ml-4 text-red-brand" style={{ marginTop: "-1px" }} />
+                    </div>
+                    <span className="text-sm -ml-1 uppercase text-red-brand">{category}</span>
+                </div>
+            </div>
+        </div>
+    </a>
 )
 
 export const TransparentPreview = ({ post, link }) => (
