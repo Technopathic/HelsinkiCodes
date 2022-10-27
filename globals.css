@@ -38,7 +38,7 @@ html, body {
     font-family: 'Inter',source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace;
     overflow-x: hidden;
     transition: all 200ms linear;
-    background: rgb(231, 237, 243);
+    background: #FFFFFF
     /*background: linear-gradient(0deg, rgba(238,247,255,1) 0%, rgba(254,247,255,1) 100%);*/
 }
 

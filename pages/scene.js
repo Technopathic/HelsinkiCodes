@@ -165,7 +165,7 @@ const Scene = () => {
     const height = router.query.height || 1080
     const letterboxHeight = router.query.letterboxHeight || 135
     const noise = router.query.noise || true
-    const shadow = router.query.shaodw || true
+    const shadow = router.query.shadow || true
 
     const generateLines = () => {
         let lineCount = height / LINE_SECTION_HEIGHT;
