@@ -17,6 +17,20 @@
     src: url(https://fonts.gstatic.com/s/pathwaygothicone/v9/MwQrbgD32-KAvjkYGNUUxAtW7pEBwx-tS1Zf.woff2) format('woff2');
 }
 
+@font-face {
+    font-family: 'Market-Deco';
+    font-style: normal;
+    font-weight: 400;
+    src: url(/fonts/Market-Deco.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Butler';
+    font-style: normal;
+    font-weight: 400;
+    src: url(/fonts/Butler.woff2) format('woff2');
+}
+
 html, body { 
     margin:0; 
     padding:0;
