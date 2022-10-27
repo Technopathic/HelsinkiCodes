@@ -10,6 +10,13 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Pathway Gothic One';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/pathwaygothicone/v9/MwQrbgD32-KAvjkYGNUUxAtW7pEBwx-tS1Zf.woff2) format('woff2');
+}
+
 html, body { 
     margin:0; 
     padding:0;
@@ -17,6 +24,8 @@ html, body {
     font-family: 'Inter',source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace;
     overflow-x: hidden;
     transition: all 200ms linear;
+    background: rgb(231, 237, 243);
+    /*background: linear-gradient(0deg, rgba(238,247,255,1) 0%, rgba(254,247,255,1) 100%);*/
 }
 
 .no-scroll-bar::-webkit-scrollbar {
@@ -29,12 +38,13 @@ h1 {
     font-family:'League Gothic';
     letter-spacing: 1px;
     text-transform: uppercase;
+    line-height: 3.5rem;
 }
 
 h2 {
     color: #31475e;
     font-size:2.5rem;
-    margin-top:2rem;
+    margin-bottom:2rem;
     font-family:'League Gothic';
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -43,7 +53,7 @@ h2 {
 h3 {
     color: #31475e;
     font-size:2rem;
-    margin-top:2rem;
+    margin-bottom:2rem;
     font-family:'League Gothic';
     text-transform: uppercase;
 }
@@ -55,11 +65,28 @@ h4 {
     text-transform: uppercase;
 }
 
+h5 {
+    color: #31475e;
+    font-family:'League Gothic';
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 42px;
+}
+
 p {
     font-size:18px;
     line-height:1.75;
     margin:8px 0px;
     color: #31475e;
+}
+
+figcaption {
+    font-size:18px;
+    line-height:1.75;
+    margin:8px 0px;
+    color: #31475e;
+    font-style: italic;
+    text-align: right;
 }
 
 ul {
@@ -77,17 +104,8 @@ li {
 a {
     font-size:18px;
     line-height:1.5;
-    color: #FF6665;
+    color: #ec4899;
     text-decoration:underline;
-}
-
-pre {
-    background: #333333;
-    overflow-x:auto;
-    margin:0 !important;
-    color: #FF6665;
-    padding: 16px;
-    border-radius: 0.5rem;
 }
 
 code {
@@ -117,19 +135,10 @@ tr:nth-child(even){
     background-color: #f2f2f2;
 }
 
-.text-red-brand {
-    color: #FF6665;
+.moveUp {
+    transition: transform 300ms ease-out;
 }
 
-.text-blue-brand {
-    color: #31475e;
-}
-
-.border-blue-brand {
-    border-color: #31475e;
-}
-
-.text-font-gothic {
-    font-family:'League Gothic';
-    letter-spacing: 1px;
+.moveUp:hover {
+    transform: translate(0, -10px);
 }

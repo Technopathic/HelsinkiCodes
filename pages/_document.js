@@ -5,7 +5,7 @@ class MyDocument extends Document {
         return (
             <Html lang={process.env.APP_LOCALE}>
                 <Head />
-                <body className="bg-lightBrandOne">
+                <body className="bg-bodyLight">
                     <Main />
                     <NextScript />
                 </body>

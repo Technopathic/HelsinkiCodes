@@ -50,49 +50,27 @@ export const getRelated = (meta) => {
         .sort((a, b) => new Date(b.meta.date) - new Date(a.meta.date))
 
     const posts = []
-
     for (const query of meta.tags) {
-        if (posts.length < 6) {
-            posts.push(...res.filter(post => {
-
-                if (!post.meta.tags.includes(query)) {
-                    return false
-                }
-
-                if (post.meta.title === meta.title) {
-                    return false
-                }
-
-                if (posts.some(checkPost => (checkPost.meta.title === post.meta.title))) {
-                    return false
-                }
-
-                return true
-            }))
-        }
-    }
-
-    if (posts.length < 6) {
-        posts.push(...res.filter(post => {
-            if (posts.length >= 6) {
-                return false
-            }
-
-            if (post.meta.category !== meta.category) {
-                return false
+        for (const post of res) {
+            if (!post.meta.tags.includes(query)) {
+                continue
             }
 
             if (post.meta.title === meta.title) {
-                return false
+                continue
             }
 
-            if (posts.some(checkPost => (checkPost.meta.title === post.meta.title))) {
-                return false
+            if (meta.title === post.meta.title) {
+                continue
             }
 
-            return true
-        }))
+            if(posts.length >= 3) {
+                break
+            }
+
+           posts.push(post)
+        }
     }
-
+    
     return posts
 }

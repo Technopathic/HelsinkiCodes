@@ -1,7 +1,7 @@
 import { FiMapPin, FiBriefcase, FiClock, FiSearch, FiChevronDown } from "react-icons/fi"
 
 const JobItem = () => (
-    <article className="flex flex-col bg-whiteBrand rounded-xl border-solid border-gray-200 border p-8">
+    <article className="flex flex-col bg-white rounded-xl border-solid border-gray-200 border p-8">
         <div className="flex items-center">
             <div className="bg-hcRedBrand h-12 w-12 rounded-full"></div>
             <div className="flex flex-col ml-3">
@@ -30,14 +30,14 @@ const JobItem = () => (
 )
 
 const Jobs = () => (
-    <section className="flex flex-col">
-        <div className="flex flex-col bg-hcRedBrand h-56 justify-center items-center">
+    <section className="flex flex-col my-24">
+        <div className="flex flex-col h-56 justify-center items-center">
             <h1 className="text-8xl">Creative Jobs</h1>
             <p>Discover your next career move, freelance gig, or internship</p>
         </div>
         <div className="w-full mb-16">
             <div className="w-full max-w-screen-xl mx-auto">
-                <div className="w-full h-14 shadow-md bg-whiteBrand -my-8 rounded-xl flex items-center justify-between">
+                <div className="w-full h-14 shadow-md bg-white -my-8 rounded-xl flex items-center justify-between">
                     <div className="flex items-center h-full flex-grow">
                         <FiSearch size={24} className="ml-4" />
                         <input className="w-full h-full rounded-xl px-4 outline-none" type="text" placeholder="Search jobs by keyword..." />

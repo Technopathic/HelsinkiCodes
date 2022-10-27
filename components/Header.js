@@ -14,12 +14,12 @@ import { MediumPreview } from './Preview'
 import SocialButton from './SocialButton'
 const HeaderWrapper = styled.header`
     transition: all 0.3s ease 0s;
-    transform: ${(props) => !props.show ? "translate3d(0px, -100px, 0px)" : "translate3d(0px, 0px, 0px)"};
+    transform: ${(props) => !props.show ? "translate3d(0px, -160px, 0px)" : "translate3d(0px, 0px, 0px)"};
     backdrop-filter: ${(props) => props.scrollPos === 0 ? 'blur(0px);' : 'blur(5px);'};
-    background-color: ${(props) => props.scrollPos === 0 ? 'transparent' : 'rgba(255, 255, 255, 0.4)'};
+    background: #181818;
 
     @media(max-width: 767px) {
-        transform: ${(props) => !props.showMobile ? "translate3d(-100px, 0px, 0px)" : "translate3d(0px, 0px, 0px)"};
+        transform: ${(props) => !props.showMobile ? "translate3d(-160px, 0px, 0px)" : "translate3d(0px, 0px, 0px)"};
         backdrop-filter: blur(5px);
         background-color: rgba(255, 255, 255, 0.4);
     }
@@ -35,7 +35,7 @@ const SearchContainer = styled.section`
     overflow: auto;
 `
 
-const Header = (props) => {
+const Header = () => {
     const router = useRouter()
 
     const [showHeader, setHeader] = useState(true)
@@ -93,16 +93,16 @@ const Header = (props) => {
 
     return (
         <>
-            <section className="h-24 w-full flex md:hidden justify-between items-center px-4">
-                <div onClick={() => setHeaderMobile(!showHeaderMobile)} className="text-gray-600 bg-whiteBrand hover:opacity-70 transition-all w-16 h-16 rounded-lg shadow-olg flex justify-center items-center">
+            <section className="h-24 w-full flex md:hidden justify-between items-center px-4 bg-darkGrayBrand">
+                <div onClick={() => setHeaderMobile(!showHeaderMobile)} className="text-gray-600 bg-white hover:opacity-70 transition-all w-16 h-16 rounded-lg shadow-olg flex justify-center items-center">
                     <FiMenu size={38} />
                 </div>
                 <Link href="/" passHref>
-                    <a className="rounded-lg shadow-lg w-16 h-16 hover:opacity-70 transition-all p-2 bg-hcBlueBrand">
-                        <img src="/site-images/hcLogoWhite-128.png" alt="NowNano Logo" className="rounded-lg" />
+                    <a className="w-20 h-20">
+                        <img src="/site-images/Square-HC-Logo-White-128.png" alt="NowNano Logo" />
                     </a>
                 </Link>
-                <div onClick={() => showSearchOverlay(!searchOverlay)} className="text-gray-600 bg-whiteBrand hover:opacity-70 transition-all w-16 h-16 rounded-lg shadow-olg flex justify-center items-center">
+                <div onClick={() => showSearchOverlay(!searchOverlay)} className="text-gray-600 bg-white hover:opacity-70 transition-all w-16 h-16 rounded-lg shadow-olg flex justify-center items-center">
                     <FiSearch size={38} />
                 </div>
             </section>
@@ -112,43 +112,48 @@ const Header = (props) => {
                 scrollPos={scrollPos}
                 className="h-screen md:h-24 w-24 md:w-full flex flex-row justify-start md:justify-center items-start md:items-center fixed top-0 left-0 right-0 z-40 box-border pt-4 md:pt-0"
             >
-                <section className="w-full h-full max-w-screen-xl flex flex-col md:flex-row justify-between items-center mx-4">
-                    <section className="md:flex items-center hidden">
+                <section className="w-full h-full md:grid grid-cols-1 md:grid-cols-3 mx-4">
+                    <section className="flex flex-col md:flex-row">
+
+                    </section>
+                    <section className="md:flex items-center hidden justify-center">
                         <Link href="/" passHref>
-                            <a className="rounded-lg shadow-lg w-16 h-16 hover:opacity-70 transition-all p-2 bg-hcBlueBrand mb-4 md:mb-0">
-                                <img src="/site-images/hcSVG-white.svg" alt="Helsinki Codes Logo" className="rounded-lg select-none" />
+                            <a className="w-20 h-20 hover:opacity-70 transition-all">
+                                <img src="/site-images/Square-HC-Logo-White-128.png" alt="Helsinki Codes Logo" className="select-none" />
                             </a>
                         </Link>
                     </section>
-                    <section className="flex items-center flex-col md:flex-row md:flex-grow-0 flex-grow">
+                    <section className="flex items-center flex-col md:flex-row justify-end">
                         <div onClick={() => setHeaderMobile(!showHeaderMobile)} className="text-gray-100 bg-darkGrayBrand hover:opacity-70 transition-all w-16 h-16 rounded-lg shadow-olg flex justify-center items-center mb-4 self-end md:hidden">
                             <FiX size={38} />
                         </div>
-                        <div onClick={() => showSearchOverlay(!searchOverlay)} className="text-gray-600 bg-whiteBrand hover:opacity-70 transition-all w-16 h-16 rounded-lg shadow-olg flex justify-center items-center ml-0 mb-4 md:mb-0 md:ml-2 cursor-pointer">
+                        <div onClick={() => showSearchOverlay(!searchOverlay)} className="text-gray-600 bg-white hover:opacity-70 transition-all w-16 h-16 rounded-lg shadow-olg flex justify-center items-center ml-0 mb-4 md:mb-0 md:ml-3 cursor-pointer">
                             <FiSearch size={38} />
                         </div>
                         <a target="_blank" rel="noopener noreferrer" href={process.env.DISCORD}>
-                            <div className="text-white bg-discord hover:opacity-70 transition-all w-16 h-16 rounded-lg shadow-lg flex justify-center items-center ml-0 mb-4 md:mb-0 md:ml-2">
+                            <div className="text-white bg-discord hover:opacity-70 transition-all w-16 h-16 rounded-lg shadow-lg flex justify-center items-center ml-0 mb-4 md:mb-0 md:ml-3">
                                 <SiDiscord size={38} />
                             </div>
                         </a>
                         <a target="_blank" rel="noopener noreferrer" href={process.env.TWITTER}>
-                            <div className="text-white bg-twitter hover:opacity-70 transition-all w-16 h-16 rounded-lg shadow-lg flex justify-center items-center ml-0 mb-4 md:mb-0 md:ml-2">
+                            <div className="text-white bg-twitter hover:opacity-70 transition-all w-16 h-16 rounded-lg shadow-lg flex justify-center items-center ml-0 mb-4 md:mb-0 md:ml-3">
                                 <FiTwitter size={38} />
                             </div>
                         </a>
                         <a target="_blank" rel="noopener noreferrer" href={process.env.TWITCH}>
-                            <div className="text-white bg-twitch hover:opacity-70 transition-all w-16 h-16 rounded-lg shadow-lg flex justify-center items-center ml-0 mb-4 md:mb-0 md:ml-2">
+                            <div className="text-white bg-twitch hover:opacity-70 transition-all w-16 h-16 rounded-lg shadow-lg flex justify-center items-center ml-0 mb-4 md:mb-0 md:ml-3">
                                 <FaTwitch size={38} />
                             </div>
                         </a>
-                        <a target="_blank" rel="noopener noreferrer" href={process.env.INSTAGRAM}>
-                            <div className="text-white bg-instagram hover:opacity-70 transition-all w-16 h-16 rounded-lg shadow-lg flex justify-center items-center ml-0 mb-4 md:mb-0 md:ml-2">
-                                <FiInstagram size={38} />
-                            </div>
-                        </a>
+                        {process.env.INSTAGRAM && 
+                            <a target="_blank" rel="noopener noreferrer" href={process.env.INSTAGRAM}>
+                                <div className="text-white bg-instagram hover:opacity-70 transition-all w-16 h-16 rounded-lg shadow-lg flex justify-center items-center ml-0 mb-4 md:mb-0 md:ml-3">
+                                    <FiInstagram size={38} />
+                                </div>
+                            </a>
+                        }
                         <a target="_blank" rel="noopener noreferrer" href={process.env.YOUTUBE}>
-                            <div className="text-white bg-youtube hover:opacity-70 transition-all w-16 h-16 rounded-lg shadow-lg flex justify-center items-center ml-0 mb-4 md:mb-0 md:ml-2">
+                            <div className="text-white bg-youtube hover:opacity-70 transition-all w-16 h-16 rounded-lg shadow-lg flex justify-center items-center ml-0 mb-4 md:mb-0 md:ml-3">
                                 <SiYoutube size={38} />
                             </div>
                         </a>
@@ -169,14 +174,14 @@ const Header = (props) => {
             </Dialog>
             {searchOverlay &&
                 <SearchContainer>
-                    <div className="h-24 w-full flex justify-end items-center p-8">
-                        <div onClick={() => showSearchOverlay(!searchOverlay)} className="text-gray-600 bg-whiteBrand hover:opacity-70 transition-all w-16 h-16 rounded-lg shadow-olg flex justify-center items-center cursor-pointer">
+                    <div className="h-24 w-full flex justify-end items-center p-4">
+                        <div onClick={() => showSearchOverlay(!searchOverlay)} className="text-gray-600 bg-white hover:opacity-70 transition-all w-16 h-16 rounded-lg shadow-olg flex justify-center items-center cursor-pointer">
                             <FiX size={38} />
                         </div>
                     </div>
-                    <div className="w-full max-w-screen-md m-auto">
+                    <div className="w-full max-w-screen-md m-auto p-4">
                         <h1>Search</h1>
-                        <div className="flex items-center h-14 flex-grow">
+                        <div className="flex items-center h-14 flex-grow mt-2">
                             <input onChange={(e) => getSearchPosts(e.target.value)} className="w-full h-full rounded-xl px-4 outline-none shadow-olg" type="text" placeholder="Search jobs by keyword..." />
                         </div>
                     </div>

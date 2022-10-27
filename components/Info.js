@@ -91,8 +91,8 @@ const Info = (props) => {
                 <BackDrop onClick={() => toggleContent(!showContent)} />
                 <div className="relative w-full max-w-screen-lg z-10 flex flex-col mt-28">
                     {props.content.map((item, i) => (
-                        <Link href={item.url}>
-                            <a index={i} href={item.url} onClick={() => toggleContent(false)} className="bg-whiteBrand rounded-xl w-full p-4 mb-6 no-underline select-none shadow-hcBlueBrand transition-all hover:bg-hcRedBrand">
+                        <Link href={item.url} passHref>
+                            <a index={i} onClick={() => toggleContent(false)} className="bg-whiteBrand rounded-xl w-full p-4 mb-6 no-underline select-none shadow-hcBlueBrand transition-all hover:bg-hcRedBrand">
                                 <h2 className="p-0 m-0">{item.chapter}</h2>
                             </a>
                         </Link>

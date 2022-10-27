@@ -10,12 +10,15 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import CookieConsent from '../components/CookieConsent'
 
+//Color One: #fef7ff
+//Color Two: #eef7ff
+
 const App = (props) => {
   const [cookieConsent, setCookieConsent] = useState(false);
 
   const router = useRouter()
-  const excludeHeader = []
-  const excludeFooter = []
+  const excludeHeader = ['/CV', '/intro', '/outro']
+  const excludeFooter = ['/CV', '/intro', '/outro']
 
   usePanelbear('11R02Y1R6RX');
 
@@ -70,15 +73,11 @@ const App = (props) => {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=League+Gothic&display=swap" as="style" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=League+Gothic&display=swap" rel="stylesheet" />
-        
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9128572572343870"
-     crossOrigin="anonymous"></script>
-     
       </Head>
       <div className="flex flex-col justify-between min-h-screen text-gray-700">
-        {!excludeHeader.includes(router.pathname) && <Header />}
+        {/*!excludeHeader.includes(router.pathname) && <Header />*/}
         <Component {...pageProps} />
-        {!excludeFooter.includes(router.pathname) && <Footer />}
+        {/*!excludeFooter.includes(router.pathname) && <Footer />*/}
         {/*!cookieConsent && <CookieConsent acceptCookie={acceptCookie} />*/}
       </div>
     </>

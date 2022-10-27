@@ -10,7 +10,7 @@ const Arrow = styled.div`
     border: 8px solid #DDDDDD;
     border-radius: 50%;
     cursor: pointer;
-    z-index: 1;
+    z-index: 40;
     transition: all 0.3s ease 0s;
     transform: ${(props) => !props.show ? "translate3d(0px, 150px, 0px)" : "translate3d(0px, 0px, 0px)"};
 

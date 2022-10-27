@@ -1,90 +1,184 @@
-import { useState, useEffect } from 'react'
-import { getPosts } from '../actions'
+import { FiInstagram, FiTwitter, FiGithub, FiExternalLink } from 'react-icons/fi'
+import { FaTwitch } from 'react-icons/fa'
+import { SiYoutube, SiLinkedin } from "react-icons/si"
 
-import SideText from '../components/SideText'
-import { LargePreview, SmallPreview, MediumPreview, CardPreview } from '../components/Preview'
+const Home = () => (
+    <main className="flex flex-col w-full max-w-5xl m-auto my-16 px-4">
+        <section className="flex flex-col w-full max-w-3xl m-auto">
+            <div className="rounded-full overflow-hidden h-48 w-48 mb-8">
+                <img src="/me.jpg" alt="me" />
+            </div>
+            <div className="flex">
+                <h1 className="mb-8 text-6xl text-pink-500">Hi, I'm Ren</h1>
+                <div className="text-5xl ml-2">👋</div>
+            </div>
+            <h2 className="m-0 text-5xl text-gray-500 dark:text-gray-200">Game Developer at <a className="no-underline text-5xl" target="_blank" rel="noopener noreferrer" href="https://www.quicksave.fi">Quicksave Interactive</a></h2>
+            <h3 className="m-0 text-4xl text-gray-400 dark:text-gray-200">Former Developer at <a className="no-underline text-4xl opacity-70" target="_blank" rel="noopener noreferrer" href="https://www.helsinki.fi">University of Helsinki</a></h3>
+            <h3 className="m-0 text-3xl text-gray-400 dark:text-gray-200">Former member of <a className="no-underline text-3xl opacity-70" target="_blank" rel="noopener noreferrer" href="https://github.com/rage">RAGE</a></h3>
+            <div className="flex flex-row my-4">
+                <section className="flex items-center">
+                    <a target="_blank" rel="noopener noreferrer" href={process.env.GITHUB}><div className="py-1 mr-4 text-gray-600 hover:opacity-70 transition-all dark:text-gray-200"><FiGithub size={26} /></div></a>
+                    <a target="_blank" rel="noopener noreferrer" href={process.env.TWITTER}><div className="py-1 mr-4 text-gray-600 hover:opacity-70 transition-all dark:text-gray-200"><FiTwitter size={26} /></div></a>
+                    <a target="_blank" rel="noopener noreferrer" href={process.env.LINKEDIN}><div className="py-1 mr-4 text-gray-600 hover:opacity-70 transition-all dark:text-gray-200"><SiLinkedin size={26} /></div></a>
+                    <a target="_blank" rel="noopener noreferrer" href={process.env.TWITCH}><div className="py-1 mr-4 text-gray-600 hover:opacity-70 transition-all dark:text-gray-200"><FaTwitch size={26} /></div></a>
+                    <a target="_blank" rel="noopener noreferrer" href={process.env.INSTAGRAM}><div className="py-1 mr-4 text-gray-600 hover:opacity-70 transition-all dark:text-gray-200"><FiInstagram size={26} /></div></a>
+                    <a target="_blank" rel="noopener noreferrer" href={process.env.YOUTUBE}><div className="py-1 mr-4 text-gray-600 hover:opacity-70 transition-all dark:text-gray-200"><SiYoutube size={26} /></div></a>
+                </section>
+            </div>
+            <br />
+            <p>I'm a live coder and software developer living in Helsinki, Finland.</p>
+            <br />
+            <p>I enjoy creating quality software and educational content. My technology stack includes ReactJS, NextJS, React-Native, TypeScript, Firebase, and Rust.</p>
+            <br />
+            <p>I am currently exploring content creation and game development.</p>
+            <p>While you're here, checkout my <a className="no-underline" target="_blank" rel="noopener noreferrer" href="/CV">CV</a> for more information about my professional career.</p>
+        </section>
 
-const Chunk = ({ items }) => (
-  <div className="mb-8">
-    {items.length > 0 &&
-      <section className="grid grid-cols-1 lg:grid-cols-4 w-full max-w-screen-xl gap-8">
-        {items.map((post, i) => (
-          i === 0 && <LargePreview key={post.link} post={post} link={'/articles' + post.link} />
-        ))}
-        <div className="col-span-2 grid-cols-1 grid sm:grid-cols-2 grid-rows-2 gap-8">
-          {items.map((post, i) => (
-            i > 0 && i < 5 && <SmallPreview key={post.link} post={post} link={'/articles' + post.link} />
-          ))}
-        </div>
-      </section>
-    }
-    {items.length >= 5 &&
-      <section className="w-full max-w-screen-xl grid grid-cols-1 lg:grid-cols-2 grid-rows-2 gap-8 pt-8">
-        {items.map((post, i) => (
-          i >= 5 && i < 9 && <MediumPreview key={post.link} post={post} link={'/articles' + post.link} />
-        ))}
-      </section>
-    }
-    {items.length >= 8 &&
-      <section className="w-full max-w-screen-xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pt-8">
-        {items.map((post, i) => (
-          i >= 8 && i < 12 && <CardPreview key={post.link} post={post} link={'/articles' + post.link} />
-        ))}
-      </section>
-    }
-  </div>
-)
+        <section className="mt-8">
+            <div className="flex flex-col w-full max-w-3xl m-auto">
+                <h2 className="text-gray-700 dark:text-gray-50">Projects</h2>
+                <p>Here are some of my most outstanding projects I enjoyed creating, both with a team and alone.</p>
+            </div>
 
-const Home = (props) => {
-  const [isLoadingMore, setLoadingMore] = useState(false)
-  const [posts, setPosts] = useState([props.posts])
-  const [postsCount, setPostsCount] = useState(props.count)
-  const [postsPage, setPostsPage] = useState(1)
+            <article className="flex flex-col md:flex-row relative w-full md:h-80 justify-end mt-8">
+                <a href="https://buildingai.elementsofai.com" target="_blank" rel="noopener noreferrer" className="w-full md:w-7/12 bg-grayBrand relative md:absolute md:left-0 rounded shadow-xl overflow-hidden moveUp"><img src="/about-images/bai.png" /></a>
+                <div className="flex flex-col text-right z-10 w-full md:w-6/12">
+                    <h2 className="text-gray-700 dark:text-gray-200">Building AI</h2>
+                    <p className="font-semibold text-gray-500 dark:text-gray-300">Advanced A.I. & Python course</p>
+                    <div className="bg-white py-3 px-4 rounded shadow-xl dark:text-gray-700">
+                        <p>MOOC for learning advanced A.I. and Python coding with University of Helsinki and Reaktor Education.</p>
+                    </div>
+                    <div className="flex flex-row justify-end mt-8">
+                        <span className="ml-3">NextJS</span>
+                        <span className="ml-3">TypeScript</span>
+                        <span className="ml-3">GraphQL</span>
+                        <span className="ml-3">Python</span>
+                    </div>
+                    <div className="flex flex-row justify-end mt-4">
+                        <a href="https://buildingai.elementsofai.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-700 transition-all ml-3 dark:text-gray-300"><FiExternalLink size={24} /></a>
+                    </div>
+                </div>
+            </article>
 
-  const updatePosts = (resPosts, resCount) => {
-    const currentPosts = posts
-    currentPosts.push(resPosts)
+            <article className="flex flex-col-reverse md:flex-row relative w-full md:h-80 mt-16">
+                <div className="flex flex-col z-10 w-full md:w-6/12">
+                    <h2 className="text-gray-700 dark:text-gray-200">Equals</h2>
+                    <p className="font-semibold text-gray-500 dark:text-gray-300">A multi-platform numbers game</p>
+                    <div className="bg-white py-3 px-4 rounded shadow-xl dark:text-gray-700">
+                        <p>A game built using web technologies which supports many platforms and languages.</p>
+                    </div>
+                    <div className="flex flex-row mt-8">
+                        <span className="ml-3">NextJS</span>
+                        <span className="ml-3">PWA</span>
+                        <span className="ml-3">Redux</span>
+                        <span className="ml-3">Electron</span>
+                        <span className="ml-3">Capacitor</span>
+                    </div>
+                    <div className="flex flex-row mt-4">
+                        <a href="https://equals.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-700 transition-all ml-3 dark:text-gray-300"><FiExternalLink size={24} /></a>
+                    </div>
+                </div>
+                <a href="https://equals.vercel.app/" target="_blank" rel="noopener noreferrer" className="w-full md:w-7/12 bg-grayBrand relative md:absolute md:right-0 rounded shadow-xl overflow-hidden moveUp"><img src="/about-images/equals.png" /></a>
+            </article>
 
-    setPosts(currentPosts)
-    setPostsPage(postsPage + 1)
-    setPostsCount(resCount)
+            <article className="flex flex-col md:flex-row relative w-full md:h-80 justify-end mt-16">
+                <a href="https://mathica.app/" target="_blank" rel="noopener noreferrer" className="w-full md:w-7/12 bg-grayBrand relative md:absolute md:left-0 rounded shadow-xl overflow-hidden moveUp"><img src="/about-images/mathica.png" /></a>
+                <div className="flex flex-col text-right z-10 w-full md:w-6/12">
+                    <h2 className="text-gray-700 dark:text-gray-200">Mathica</h2>
+                    <p className="font-semibold text-gray-500 dark:text-gray-300">The predecessor to Equals</p>
+                    <div className="bg-white py-3 px-4 rounded shadow-xl dark:text-gray-700">
+                        <p>Create equations with supplied numbers from a random number generator to reach a target number.</p>
+                    </div>
+                    <div className="flex flex-row justify-end mt-8">
+                        <span className="ml-3">ReactJS</span>
+                        <span className="ml-3">Firebase</span>
+                        <span className="ml-3">PWA</span>
+                    </div>
+                    <div className="flex flex-row justify-end mt-4">
+                        <a href="https://github.com/Technopathic/Mathica" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-700 transition-all ml-3 dark:text-gray-300"><FiGithub size={24} /></a>
+                        <a href="https://mathica.app/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-700 transition-all ml-3 dark:text-gray-300"><FiExternalLink size={24} /></a>
+                    </div>
+                </div>
+            </article>
 
-    setLoadingMore(false)
-  }
+            <article className="flex flex-col-reverse md:flex-row relative w-full md:h-80 mt-16">
+                <div className="flex flex-col z-10 w-full md:w-6/12">
+                    <h2 className="text-gray-700 dark:text-gray-200">Rubi</h2>
+                    <p className="font-semibold text-gray-500 dark:text-gray-300">Furigana annotations in English</p>
+                    <div className="bg-white py-3 px-4 rounded shadow-xl dark:text-gray-700">
+                        <p>A ReactJS library for introducing semantically correct Furigana annogations to English writing systems.</p>
+                    </div>
+                    <div className="flex flex-row mt-8">
+                        <span className="ml-3">TypeScript</span>
+                        <span className="ml-3">ReactJS</span>
+                        <span className="ml-3">JSX</span>
+                    </div>
+                    <div className="flex flex-row mt-4">
+                        <a href="https://github.com/Technopathic/rubi" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-700 transition-all ml-3 dark:text-gray-300"><FiGithub size={24} /></a>
+                        <a href="https://technopathic.github.io/Rubi/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-700 transition-all ml-3 dark:text-gray-300"><FiExternalLink size={24} /></a>
+                    </div>
+                </div>
+                <a href="https://technopathic.github.io/Rubi/" target="_blank" rel="noopener noreferrer" className="w-full md:w-7/12 bg-grayBrand relative md:absolute md:right-0 rounded shadow-xl overflow-hidden moveUp"><img src="/about-images/rubi.png" /></a>
+            </article>
 
-  const loadContent = async () => {
-    setLoadingMore(true)
-    const res = await getPosts(postsPage, process.env.POST_COUNT)
-    updatePosts(res.posts, res.count)
-  }
+        </section>
 
-  return (
-    <main className="my-10 md:my-28 flex flex-col items-center mx-8">
-      {posts.map((chunkContent, i) => (
-        <Chunk items={chunkContent} key={i} />
-      ))}
-      <section className="flex w-full max-w-screen-xl justify-between items-center mt-14">
-        <div className="h-px bg-divider flex-grow"></div>
-        {postsPage * process.env.POST_COUNT >= postsCount ?
-          <div className="px-6 py-2 text-center mx-4">You've reached the end!<span className="text-2xl ml-2">👋</span></div>
-          :
-          isLoadingMore ?
-            <div></div>
-            : <span onClick={loadContent} className="px-6 py-2 border border-solid border-gray-300 rounded-full cursor-pointer text-center mx-4">Load More</span>
-        }
-        <div className="h-px bg-divider flex-grow"></div>
-      </section>
-      <SideText text="Helsinki" direction="left" move="down" time={10} delay={1} />
-      <SideText text="Codes" direction="right" move="up" time={11} delay={4} />
+        <section className="flex flex-col w-full max-w-3xl m-auto mt-16">
+            <h2 className="text-gray-700 dark:text-gray-50">Skills</h2>
+            <p>I love learning new and exciting technologies. There are the tools which impact my every day life and workflow.</p>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
+                <div className="bg-white rounded shadow-lg rounded justify-center items-center flex flex-col h-32 dark:text-gray-700 moveUp">
+                    <span className="w-16"><img src="/readme-images/typescript.png" /></span>
+                    <span>TypeScript</span>
+                </div>
+                <div className="bg-white rounded shadow-lg rounded justify-center items-center flex flex-col h-32 dark:text-gray-700 moveUp">
+                    <span className="w-16"><img src="/readme-images/react.png" /></span>
+                    <span>ReactJS</span>
+                </div>
+                <div className="bg-white rounded shadow-lg rounded justify-center items-center flex flex-col h-32 dark:text-gray-700 moveUp">
+                    <span className="w-16"><img src="/readme-images/nextjs.png" /></span>
+                    <span>NextJS</span>
+                </div>
+                <div className="bg-white rounded shadow-lg rounded justify-center items-center flex flex-col h-32 dark:text-gray-700 moveUp">
+                    <span className="w-16"><img src="/readme-images/notion.png" /></span>
+                    <span>Notion</span>
+                </div>
+                <div className="bg-white rounded shadow-lg rounded justify-center items-center flex flex-col h-32 dark:text-gray-700 moveUp">
+                    <span className="w-16"><img src="/readme-images/firebase.png" /></span>
+                    <span>Firebase</span>
+                </div>
+                <div className="bg-white rounded shadow-lg rounded justify-center items-center flex flex-col h-32 dark:text-gray-700 moveUp">
+                    <span className="w-16"><img src="/readme-images/nodejs.png" /></span>
+                    <span>NodeJS</span>
+                </div>
+                <div className="bg-white rounded shadow-lg rounded justify-center items-center flex flex-col h-32 dark:text-gray-700 moveUp">
+                    <span className="w-16"><img src="/readme-images/rust.png" /></span>
+                    <span>Rust</span>
+                </div>
+                <div className="bg-white rounded shadow-lg rounded justify-center items-center flex flex-col h-32 dark:text-gray-700 moveUp">
+                    <span className="w-16"><img src="/readme-images/graphql.png" /></span>
+                    <span>GraphQL</span>
+                </div>
+                <div className="bg-white rounded shadow-lg rounded justify-center items-center flex flex-col h-32 dark:text-gray-700 moveUp">
+                    <span className="w-16"><img src="/readme-images/supabase.png" /></span>
+                    <span>Supabase</span>
+                </div>
+                <div className="bg-white rounded shadow-lg rounded justify-center items-center flex flex-col h-32 dark:text-gray-700 moveUp">
+                    <span className="w-16"><img src="/readme-images/pixijs.png" /></span>
+                    <span>PixiJS</span>
+                </div>
+            </div>
+        </section>
+
+        <section className="flex flex-col w-full max-w-3xl m-auto mt-16">
+            <h2 className="text-gray-700 dark:text-gray-50">Wanna reach out?</h2>
+            <p>Feel free to drop me a message if you have some interesting offer or any questions.</p>
+            <p>Please use <a href={process.env.LINKEDIN} target="_blank" rel="noopener noreferrer" className="no-underline">LinkedIn</a> or <a href={process.env.TWITTER} target="_blank" rel="noopener noreferrer" className="no-underline">Twitter</a> to contact me.</p>
+        </section>
+
+
     </main>
-  )
-}
-
-export async function getStaticProps() {
-  const { posts, count } = await getPosts(0, process.env.POST_COUNT)
-  return {
-    props: { posts, count }
-  }
-}
+)
 
 export default Home

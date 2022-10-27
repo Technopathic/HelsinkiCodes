@@ -20,11 +20,11 @@ const env = {
     "APP_SITE_NAME": "Helsinki Codes",
     "APP_LOCALE": "en",
 
-    "POST_COUNT": 12,
+    "POST_COUNT": 10,
     "NOWNANO_URL": "https://nownano.tv",
     "SUPPORT_EMAIL": "nownanotv@gmail.com",
 
-    "INSTAGRAM": "https://www.instagram.com/NowNano/",
+    "INSTAGRAM": "",
     "TWITTER": "https://twitter.com/NowNanoTV",
     "GITHUB": "https://github.com/Technopathic",
     "TWITCH": "https://twitch.tv/NowNano",

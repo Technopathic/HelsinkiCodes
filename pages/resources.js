@@ -28,7 +28,7 @@ const Resources = () => {
             <section className="flex flex-col w-full max-w-screen-xl justify-between items-center">
                 <section className="w-full flex flex-wrap">
                     {Object.keys(resourceData).map((key, i) => (
-                        <div className={`flex py-4 px-8 m-2 cursor-pointer rounded-xl select-none shadow-md items-center ${activeCategory === key ? 'bg-hcBlueBrand text-white' : 'bg-whiteBrand'}`} key={key} onClick={() => setActiveCategory(key)}>
+                        <div className={`flex py-4 px-8 m-2 cursor-pointer rounded-xl select-none shadow-md items-center ${activeCategory === key ? 'bg-hcBlueBrand text-white' : 'bg-white'}`} key={key} onClick={() => setActiveCategory(key)}>
                             <div className="mr-2 p-1">{ICONS[key]}</div>
                             {key}
                         </div>

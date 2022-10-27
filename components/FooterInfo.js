@@ -40,20 +40,18 @@ const FooterInfo = (props) => {
     return (
         <FooterContainer>
             <article className="w-1/2 h-full">
-                <Link href={props.next.url}>
-                    <a href={props.next.url}><img src={props.coverImage} className="w-full h-full object-cover" alt="cover image" /></a>
+                <Link href={props.next.url} passHref>
+                    <a><img src={props.coverImage} className="w-full h-full object-cover" alt="cover image" /></a>
                 </Link>
             </article>
             <section className="w-1/2 flex flex-col p-4 justify-between items-start">
                 <div></div>
                 <div className="flex flex-col justify-center items-start">
                     <h4 className="text-gray-400">Up Next</h4>
-                    <Link href={props.next.url}><a href={props.next.url} className="no-underline"><h2 className="m-0">{props.next.chapter}</h2></a></Link>
-                    <Link href={props.next.url}>
-                        <a href={props.next.url} className="mt-2 bg-hcRedBrand text-white py-2 px-6 rounded-full hover:opacity-70 transition-opacity flex flex-row items-center text-lg no-underline">
-                            Start <FiArrowRight size={22} className="ml-1" />
-                        </a>
-                    </Link>
+                    <Link href={props.next.url} passHref><a className="no-underline"><h2 className="m-0">{props.next.chapter}</h2></a></Link>
+                    <Link href={props.next.url} passHref><a className="mt-2 bg-hcRedBrand text-white py-2 px-6 rounded-full hover:opacity-70 transition-opacity flex flex-row items-center text-lg no-underline">
+                        Start <FiArrowRight size={22} className="ml-1" />
+                    </a></Link>
                 </div>
                 <div className="flex flex-col items-start">
                     <a href={process.env.DISCORD} target="_blank" rel="noopener noreferrer" className="mt-4 no-underline bg-grayBrand text-purpleBrand py-2 px-6 rounded-full hover:opacity-70 transition-opacity flex flex-row items-center text-lg" style={{ color: "#333333" }}>Join our Discord<SiDiscord size={22} className="ml-2" /></a>
