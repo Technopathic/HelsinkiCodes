@@ -108,13 +108,6 @@ const CV = () => (
             <title>Welcome to the CV</title>
             <link rel='stylesheet' type='text/css' media='print' href='../globals.css' />
         </Head>
-        <div className="flex flex-row w-full fixed top-0 left-0 right-0">
-            <div className="w-1/5 h-1.5 bg-redBrand shadow-redShadow"></div>
-            <div className="w-1/5 h-1.5 bg-pinkBrand shadow-pinkShadow"></div>
-            <div className="w-1/5 h-1.5 bg-greenBrand shadow-greenShadow"></div>
-            <div className="w-1/5 h-1.5 bg-blueBrand shadow-blueShadow"></div>
-            <div className="w-1/5 h-1.5 bg-purpleBrand shadow-purpleShadow"></div>
-        </div>
         <Header>
             <HeaderCircle>
                 <LeftText>{data.sloganOne}</LeftText>
@@ -219,43 +212,55 @@ const CV = () => (
         </div>
         <div className="w-full flex flex-col mb-6">
             <div className="flex items-center relative mb-6">
+                <span className="text-xl uppercase font-bold">Volunteer</span>
+                <Tread />
+            </div>
+            <div className="flex flex-col md:flex-row flex-wrap">
+                {data.volunteer.map((vol, i) => (
+                    <div className="flex flex-row w-full md:w-1/3 items-center mb-4" key={i}>
+                        <PortImage>
+                            <img src={vol.image} />
+                        </PortImage>
+                        <div className="flex flex-col ml-2">
+                            <span className="font-semibold">{vol.name}</span>
+                            <div>{vol.position}</div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+        <div className="w-full flex flex-col mb-6">
+            <div className="flex items-center relative mb-6">
                 <span className="text-xl uppercase font-bold">Social</span>
                 <Tread />
             </div>
             <div className="flex flex-col md:flex-row flex-wrap">
-                <div className="flex flex-row w-full md:w-1/5 items-center mb-4">
+                <div className="flex flex-row w-full md:w-1/4 items-center mb-4">
                     <FiGithub size={36} color="#333333" />
                     <div className="flex flex-col ml-2">
                         <span className="font-semibold">Github</span>
                         <div>{data.social.github.name}</div>
                     </div>
                 </div>
-                <div className="flex flex-row w-full md:w-1/5 items-center mb-4">
+                <div className="flex flex-row w-full md:w-1/4 items-center mb-4">
                     <FaLinkedin size={36} color="#0077b5" />
                     <div className="flex flex-col ml-2">
                         <span className="font-semibold">LinkedIn</span>
                         <div>{data.social.linkedin.name}</div>
                     </div>
                 </div>
-                <div className="flex flex-row w-full md:w-1/5 items-center mb-4">
+                <div className="flex flex-row w-full md:w-1/4 items-center mb-4">
                     <FiTwitter size={36} color="#1da1f2" />
                     <div className="flex flex-col ml-2">
                         <span className="font-semibold">Twitter</span>
                         <div>{data.social.twitter.name}</div>
                     </div>
                 </div>
-                <div className="flex flex-row w-full md:w-1/5 items-center mb-4">
+                <div className="flex flex-row w-full md:w-1/4 items-center mb-4">
                     <FaTwitch size={36} color="#9146ff" />
                     <div className="flex flex-col ml-2">
                         <span className="font-semibold">Twitch</span>
                         <div>{data.social.twitch.name}</div>
-                    </div>
-                </div>
-                <div className="flex flex-row w-full md:w-1/5 items-center mb-4">
-                    <FiInstagram size={36} color="#e1306c" />
-                    <div className="flex flex-col ml-2">
-                        <span className="font-semibold">Instagram</span>
-                        <div>{data.social.instagram.name}</div>
                     </div>
                 </div>
             </div>

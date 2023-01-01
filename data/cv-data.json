@@ -24,10 +24,6 @@
         "twitch": {
             "name": "NowNano",
             "link": "https://twitch.tv/NowNano"
-        },
-        "instagram": {
-            "name": "NowNano",
-            "link": "https://instagram.com/NowNano"
         }
     },
     "experience": [
@@ -37,7 +33,7 @@
             "position": "Full-time",
             "startDate": "Aug 2021",
             "endDate": "Present",
-            "length": "6mo",
+            "length": "1yr 6mo",
             "location": "Helsinki, Finland",
             "description": "Creating HTML5 games with PixiJS",
             "image": "/cv-images/quicksave.png"
@@ -100,13 +96,14 @@
     ],
     "portfolio": [
         {
-            "title": "NowNano",
+            "title": "Equals",
             "skills": [
                 "NextJS",
-                "Twitch"
+                "PWA",
+                "Vercel"
             ],
-            "description": "Coding guides, content creation, and live-streams",
-            "image": "/cv-images/nownano.png",
+            "description": "A numbers game for finding quick solutions",
+            "image": "/cv-images/equals.png",
             "link": ""
         },
         {
@@ -121,6 +118,27 @@
             "link": ""
         },
         {
+            "title": "Building A.I.",
+            "skills": [
+                "NextJS",
+                "Firebase",
+                "Python"
+            ],
+            "description": "An advanced A.I. course for Elements of A.I.",
+            "image": "/cv-images/building-ai.png",
+            "link": ""
+        },
+        {
+            "title": "Tezotopia Battles",
+            "skills": [
+                "TypeScript",
+                "PixiJS"
+            ],
+            "description": "A Web3 strategy game based on the Tezotopia NFTs",
+            "image": "/cv-images/tezo-battles.png",
+            "link": ""
+        },
+        {
             "title": "Stride",
             "skills": [
                 "ReactJS",
@@ -129,17 +147,6 @@
             ],
             "description": "A library for automated conversational interactions",
             "image": "/cv-images/stride.png",
-            "link": ""
-        },
-        {
-            "title": "Mathica.app",
-            "skills": [
-                "ReactJS",
-                "PWA",
-                "Firebase"
-            ],
-            "description": "A numbers game for finding quick solutions",
-            "image": "/cv-images/mathica.png",
             "link": ""
         },
         {
@@ -152,17 +159,6 @@
             "description": "A rather challenging and competitive word game",
             "image": "/cv-images/upword.png",
             "link": ""
-        },
-        {
-            "title": "Virgil",
-            "skills": [
-                "ReactJS",
-                "NextJS",
-                "DraftJS"
-            ],
-            "description": "A WYSIWYG editor designed for writing in comfort",
-            "image": "/cv-images/virgil.png",
-            "link": ""
         }
     ],
     "writings": [
@@ -173,22 +169,30 @@
             "link": ""
         },
         {
-            "title": "A.I. images with Deep Daze",
-            "date": "April 2021",
-            "description": "A beginner friendly guide on Deep Daze and Python",
-            "link": ""
-        },
-        {
             "title": "Ruby text and how I made it better",
             "date": "April 2021",
             "description": "Furigana style annotations to an English writing system",
             "link": ""
+        }
+    ],
+    "volunteer": [
+        {
+            "image":"/cv-images/volunteer-igda.jfif",
+            "name": "IGDA Finland",
+            "position": "Hub Lead",
+            "date": "Aug 2022 - Present"
         },
         {
-            "title": "My Experience with Coding Interviews",
-            "date": "April 2021",
-            "description": "Let's talk about interviews and how to make them better.",
-            "link": ""
+            "image":"/cv-images/volunteer-fgj.jfif",
+            "name": "Finnish Game Jam",
+            "position": "Host & Producer",
+            "date": "November 2022 - Present"
+        },
+        {
+            "image":"/cv-images/volunteer-wlg.jfif",
+            "name": "W Love Games",
+            "position": "Live-stream Coordinator",
+            "date": "October 2022"
         }
     ]
 }
