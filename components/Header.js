@@ -11,7 +11,6 @@ import { searchPosts } from '../actions'
 import { MediumPreview } from './Preview'
 
 
-import SocialButton from './SocialButton'
 const HeaderWrapper = styled.header`
     transition: all 0.3s ease 0s;
     transform: ${(props) => !props.show ? "translate3d(0px, -160px, 0px)" : "translate3d(0px, 0px, 0px)"};
@@ -163,12 +162,6 @@ const Header = () => {
             <Dialog show={showDialog} setDialog={setShowDialog}>
                 <div className="flex flex-col w-full justify-center items-center">
                     <h2 className="m-0 mb-4">Sign in with...</h2>
-                    <SocialButton provider="twitter" />
-                    <SocialButton provider="google" />
-                    <SocialButton provider="github" />
-                    <SocialButton provider="discord" />
-                    <SocialButton provider="twitch" />
-                    <SocialButton provider="spotify" />
                     <div className="cursor-pointer w-full py-4 rounded flex justify-center items-center hover:bg-grayBrand transition-all select-none" onClick={() => setShowDialog(false)}>Close</div>
                 </div>
             </Dialog>

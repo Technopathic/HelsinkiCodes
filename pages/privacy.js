@@ -49,7 +49,7 @@ const Privacy = () => (
         <p>We keep your data only for as long as it is needed for the purpose for which your data were registered and used.</p>
 
         <h3>Third parties that we share your personal data with</h3>
-        <p>In some instances, we may share and disclose personal data with Google Ads, Panelbear, Mailchimp, and Zapier in order to send information to our users in a coordinated way.</p>
+        <p>In some instances, we may share and disclose personal data with Google Ads, Mailchimp, and Zapier in order to send information to our users in a coordinated way.</p>
 
         <h3>Profiling and automated decisions</h3>
 
@@ -155,9 +155,6 @@ const Privacy = () => (
         <p><strong>Session cookies: </strong>These cookies are set when you open your browser and last until you close it again. When you close your browser, the cookies will be deleted automatically.</p>
 
         <p><strong>Persistent: </strong>These cookies last for a predetermined length of time and remain on your system until they expire or you delete them.</p>
-
-        <h3>Statistic - Panelbear</h3>
-        <p>Helsinki Codes uses the analytic tool Panelbear to gather and assess information about how visitors use the web site. Panelbear does not use cookies. More information on what data Panelbear gathers can be found on <a href="https://panelbear.com/docs/what-we-collect/" rel="noopener noreferrer" target="_blank">Panelbear</a></p>
 
         <h3>Advertisement - Google Adsense</h3>
         <p>Please refer to <a rel="noopener noreferrer" target="_blank" href="https://www.google.co.uk/policies/technologies/partner-sites/">How Google uses information from sites or apps that use our services</a></p>
