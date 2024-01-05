@@ -50,7 +50,7 @@ export const getRelated = (meta) => {
         .sort((a, b) => new Date(b.meta.date) - new Date(a.meta.date))
 
     const posts = []
-    for (const query of meta.tags) {
+    /*for (const query of meta.tags) {
         for (const post of res) {
             if (!post.meta.tags.includes(query)) {
                 continue
@@ -70,7 +70,7 @@ export const getRelated = (meta) => {
 
            posts.push(post)
         }
-    }
+    }*/
     
     return posts
 }
