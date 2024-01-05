@@ -22,8 +22,12 @@
             "link": "https://twitter.com/NowNanoTV"
         },
         "twitch": {
-            "name": "NowNano",
-            "link": "https://twitch.tv/NowNano"
+            "name": "RenUnsupervised",
+            "link": "https://twitch.tv/RenUnsupervised"
+        },
+        "instagram": {
+            "name": "RenUnsupervised",
+            "link": "https://instagram.com/RenUnsupervised"
         }
     },
     "experience": [
@@ -33,7 +37,7 @@
             "position": "Full-time",
             "startDate": "Aug 2021",
             "endDate": "Present",
-            "length": "1yr 6mo",
+            "length": "2yr 6mo",
             "location": "Helsinki, Finland",
             "description": "Creating HTML5 games with PixiJS",
             "image": "/cv-images/quicksave.png"
@@ -132,9 +136,10 @@
             "title": "Tezotopia Battles",
             "skills": [
                 "TypeScript",
-                "PixiJS"
+                "PixiJS",
+                "AWS"
             ],
-            "description": "A Web3 strategy game based on the Tezotopia NFTs",
+            "description": "An online multiplayer turn-based battle strategy game",
             "image": "/cv-images/tezo-battles.png",
             "link": ""
         },
@@ -150,14 +155,14 @@
             "link": ""
         },
         {
-            "title": "Upword.app",
+            "title": "Axie Infinity: Raylights",
             "skills": [
-                "ReactJS",
-                "PWA",
-                "Firebase"
+                "Typescript",
+                "PixiJS",
+                "AWS"
             ],
-            "description": "A rather challenging and competitive word game",
-            "image": "/cv-images/upword.png",
+            "description": "A real-time multiplayer casual farming simulator",
+            "image": "/cv-images/ray-lights.png",
             "link": ""
         }
     ],
@@ -185,11 +190,11 @@
         {
             "image":"/cv-images/volunteer-fgj.jfif",
             "name": "Finnish Game Jam",
-            "position": "Host & Producer",
+            "position": "Board Member",
             "date": "November 2022 - Present"
         },
         {
-            "image":"/cv-images/volunteer-wlg.jfif",
+            "image":"/cv-images/wlg.jpeg",
             "name": "W Love Games",
             "position": "Live-stream Coordinator",
             "date": "October 2022"

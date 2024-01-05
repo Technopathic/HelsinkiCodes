@@ -20,12 +20,12 @@ Formerly, a software developer for the University of Helsinki, team member of [R
 
 ### What I'm about
 
-- ☕ I'm currently working on creating Mathica, a multiplayer numbers game.
-- 📖 I'm learning Rust and Finnish
-- 📺 I stream every week on Twitch.
+- ☕ I'm currently volunteering with IGDA Finland and Finnish Game Jam.
+- 📖 I'm learning Unreal and Finnish
+- 📺 I stream every so often on Twitch.
 - ⛔ I will **not** build your idea for you.
 - 💬 Ask me about anything. I'm happy to help.
-- 📫 How to reach me: [Twitter](https://twitter.com/NowNanoTV)
+- 📫 How to reach me: [LinkedIn](https://linkedin.com/in/nsoharab)
 
 ### Languages and Tools
 

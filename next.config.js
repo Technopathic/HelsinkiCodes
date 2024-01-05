@@ -24,10 +24,10 @@ const env = {
     "NOWNANO_URL": "https://nownano.tv",
     "SUPPORT_EMAIL": "nownanotv@gmail.com",
 
-    "INSTAGRAM": "",
+    "INSTAGRAM": "https://instagram.com/RenUnsupervised",
     "TWITTER": "https://twitter.com/NowNanoTV",
     "GITHUB": "https://github.com/Technopathic",
-    "TWITCH": "https://twitch.tv/NowNano",
+    "TWITCH": "https://twitch.tv/RenUnsupervised",
     "DISCORD": "https://discord.gg/t6fgmdAh",
     "KO_FI": "",
     "LINKEDIN": "https://www.linkedin.com/in/nsoharab/",

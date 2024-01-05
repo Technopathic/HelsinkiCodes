@@ -250,10 +250,10 @@ const CV = () => (
                     </div>
                 </div>
                 <div className="flex flex-row w-full md:w-1/4 items-center mb-4">
-                    <FiTwitter size={36} color="#1da1f2" />
+                    <FiInstagram size={36} color="#E1306C" />
                     <div className="flex flex-col ml-2">
-                        <span className="font-semibold">Twitter</span>
-                        <div>{data.social.twitter.name}</div>
+                        <span className="font-semibold">Instagram</span>
+                        <div>{data.social.instagram.name}</div>
                     </div>
                 </div>
                 <div className="flex flex-row w-full md:w-1/4 items-center mb-4">

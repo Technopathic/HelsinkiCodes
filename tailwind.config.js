@@ -37,6 +37,9 @@ module.exports = {
       },
       backgroundImage: {
         'bodyLight': 'repeating-linear-gradient(-55deg, rgba(238, 238, 238, 0.24), rgba(238, 238, 238, 0.24) 200px, rgba(255, 255, 255, 1) 200px, rgba(255, 255, 255, 1) 400px)'
+      },
+      height: {
+        '128': '38rem',
       }
     },
   },
