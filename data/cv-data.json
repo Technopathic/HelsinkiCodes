@@ -155,17 +155,6 @@
             "link": ""
         },
         {
-            "title": "Tezotopia Battles",
-            "skills": [
-                "TypeScript",
-                "PixiJS",
-                "AWS"
-            ],
-            "description": "An online multiplayer turn-based battle strategy game",
-            "image": "/cv-images/tezo-battles.png",
-            "link": ""
-        },
-        {
             "title": "Stride",
             "skills": [
                 "ReactJS",
