@@ -100,6 +100,28 @@
     ],
     "portfolio": [
         {
+            "title": "Axie Infinity: Raylights",
+            "skills": [
+                "Typescript",
+                "PixiJS",
+                "AWS"
+            ],
+            "description": "A real-time multiplayer casual farming simulator",
+            "image": "/cv-images/ray-lights.png",
+            "link": ""
+        },
+        {
+            "title": "Tezotopia Battles",
+            "skills": [
+                "TypeScript",
+                "PixiJS",
+                "AWS"
+            ],
+            "description": "An online multiplayer turn-based battle strategy game",
+            "image": "/cv-images/tezo-battles.png",
+            "link": ""
+        },
+        {
             "title": "Equals",
             "skills": [
                 "NextJS",
@@ -152,17 +174,6 @@
             ],
             "description": "A library for automated conversational interactions",
             "image": "/cv-images/stride.png",
-            "link": ""
-        },
-        {
-            "title": "Axie Infinity: Raylights",
-            "skills": [
-                "Typescript",
-                "PixiJS",
-                "AWS"
-            ],
-            "description": "A real-time multiplayer casual farming simulator",
-            "image": "/cv-images/ray-lights.png",
             "link": ""
         }
     ],
