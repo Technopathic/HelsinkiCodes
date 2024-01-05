@@ -78,11 +78,13 @@ const Blog = (props) => {
   )
 }
 
+/*
 export async function getStaticProps() {
   const { posts, count } = await getPosts(0, process.env.POST_COUNT)
   return {
     props: { posts, count }
   }
 }
+*/
 
 export default Blog
